@@ -297,7 +297,7 @@
           font-size: 16px;
           font-weight: 400;
           text-transform: uppercase; }
-          .headerCart .headerCartWrap .headerCartWrapInAll div a:last-child:hover {
+          .headerCart .headerCartWrap .headerCartWrapInAll button:last-child:hover {
             color: #f16d7f; }
         .headerCart .headerCartWrap .headerCartWrapInAll div a {
           text-decoration: none; }
@@ -316,7 +316,7 @@
               color: #f16d7f; }
             .headerCart .headerCartWrap .headerCartWrapInAll div a div span {
               color: #e4af48; }
-            .headerCart .headerCartWrap .headerCartWrapInAll div a div .headerCartWrapPrice {
+            .headerCart .headerCartWrap .headerCartWrapInAll .headerCartWrapPrice {
               color: #f16d7f;
               display: flex;
               justify-content: flex-start;
@@ -1457,7 +1457,8 @@ details[open] summary .fa-caret-up {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif; }
+  /* font-family: 'Lato', sans-serif; */
+  }
 
 /*-------------------------------NEW ARRIVALS ST-----------------------------*/
 .newArrivalsBg {
