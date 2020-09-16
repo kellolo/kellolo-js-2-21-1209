@@ -52,8 +52,9 @@
   font-weight: 300;
   line-height: 32px; }
 .dropdown .dropdown-menu {
-  background-color: #ffffff;
-  width: 250px; }
+  /* background-color: #ffffff; */
+  width: 250px;
+  }
   .dropdown .dropdown-menu div {
     color: #232323;
     font-size: 14px;

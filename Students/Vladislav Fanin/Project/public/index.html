@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../src/layout/css/Index_style.css">
+    <script src="https://kit.fontawesome.com/861689887d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="header container">
+        <a href="#" class="logo">Bran<span>d</span></a>
+
+        <form method="get" class="search">
+            <select class="search__browse">
+                <option value="">Browse<i class="fas fa-caret-down"></i></option>
+
+            </select>
+            <input type="text" name="search" placeholder="Search for Item...">
+            <button><i class="fas fa-search"></i></button>
+        </form>
+
+
+
+        <div class="headerCart pr-4" >
+            <button class="btn_col" id="basket-toggler"></button>
+
+            <div class="headerCartWrap invisible" id="basket">
+                <div class="headerCartWrapBlock"></div>
+                <div class="headerCartWrapInAll" >
+                    <div id="basket-items" class="headerCartWrapInAll">
+
+                    </div>
+
+                    <div class="headerCartWrapTotalPrice">
+                        <div>total</div>
+                        <div>$500.00</div>
+                    </div>
+
+                    <button type="button" class="productsButtonIndex">Checkout</button>
+                    <button type="button" class="productsButtonIndex">Go to cart</button>
+                </div>
+            </div>
+            <button name="accountBar" class="header__account-bar">My Account <i class="fas fa-caret-down"></i></button>
+        </div>
+        </div>
+        <!-- <div id="basket-toggler" class="header__cart">
+            <button><img src="../src/assets/img/cart.png" alt="cart"></button>
+
+
+
+            <div class="headerCartWrap invisible" id="basket">
+                <div class="headerCartWrapBlock"></div>
+                <div class="headerCartWrapInAll">
+                    <div id="basket-items" class="headerCartWrapInAll"></div>
+                    <div class="headerCartWrapTotalPrice">
+                        <div>total</div>
+                        <div>$500.00</div>
+                    </div>
+
+                    <button type="button" class="productsButtonIndex">Checkout</button>
+                    <button type="button" class="productsButtonIndex">Go to cart</button>
+                </div>
+            </div> -->
+
+        </div>
+
+        
+
+    <div class="headerLine"></div>
+
+    <div class="topNav">
+        <a href="#">Home</a>
+        <a href="#">Man</a>
+        <a href="SinglePage.html">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Accoseriese</a>
+        <a href="#">Featured</a>
+        <a href="#">Hot Deals </a>
+    </div>
+
+    <div class="topBanner container">
+        <div class="contentBanner container">
+            <div class="column_pink"></div>
+            <div class="h1_bunner">
+                <h1><span class="spanBrand_1">THE BRAND</span><br> <span class="spanBrand_2">OF LUXERIOUS</span> <span
+                        class="spanBrand_3">FASHION</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="topOrders container">
+        <div class="offer"><img src="../src/assets/img/offer1.jpg" alt="offer">
+            <div class="OfferTextMan">
+                <p>hOT dEAL <br><span class="offer_pink">FOR MEN</span></p>
+            </div>
+        </div>
+        <div class="offer"><img src="../src/assets/img/offer2.jpg" alt="offer">
+            <div class="OfferTextTrendy">
+                <p>LUXIROUS &amp; trendy <br><span class="offer_pink"> ACCESORIES</span></p>
+            </div>
+        </div>
+        <div class="offer"><img src="../src/assets/img/offer3.jpg" alt="offer">
+            <div class="OfferTextWomen">
+                <p>30% offer <br><span class="offer_pink">women</span></p>
+            </div>
+        </div>
+        <div class="offer"><img src="../src/assets/img/offer4.jpg" alt="offer">
+            <div class="OfferTextKids">
+                <p>new arrivals <br><span class="offer_pink">FOR kids</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="FeturedItems container">
+        <h2>Fetured Items</h2>
+        <p>Shop for items based on what we featured in this week</p>
+
+        <div class="row" id="catalog">
+            <!-- <div class="FeturedItems_content">
+            <div class="FeturedContent">
+                <div class="FeturedContent_img">
+                    <img src="../src/assets/img/content1.jpg" alt="content">
+                </div>
+                <div class="FeturedContent_text">
+                    <p>Mango People T-shirt</p>
+                    <p class="p_cash">$52.00</p>
+                </div>
+                <div class="FeturedContent_hov">
+                    <div class="FeturedContent_hov_cont">
+                        <img src="../src/assets/img/white_cart.png" alt="cart">
+                        <a href="SinglePage.html">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="FeturedContent">
+                <div class="FeturedContent_img">
+                    <img src="../src/assets/img/content2.jpg" alt="content">
+                </div>
+                <div class="FeturedContent_text">
+                    <p>Mango People T-shirt</p>
+                    <p class="p_cash">$52.00</p>
+                </div>
+                <div class="FeturedContent_hov">
+                    <div class="FeturedContent_hov_cont">
+                        <img src="../src/assets/img/white_cart.png" alt="cart">
+                        <a href="SinglePage.html">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="FeturedContent">
+                <div class="FeturedContent_img">
+                    <img src="../src/assets/img/content3.jpg" alt="content">
+                </div>
+                <div class="FeturedContent_text">
+                    <p>Mango People T-shirt</p>
+                    <p class="p_cash">$52.00</p>
+                </div>
+                <div class="FeturedContent_hov">
+                    <div class="FeturedContent_hov_cont">
+                        <img src="../src/assets/img/white_cart.png" alt="cart">
+                        <a href="SinglePage.html">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="FeturedContent">
+                <div class="FeturedContent_img">
+                    <img src="../src/assets/img/content4.jpg" alt="content">
+                </div>
+                <div class="FeturedContent_text">
+                    <p>Mango People T-shirt</p>
+                    <p class="p_cash">$52.00</p>
+                </div>
+                <div class="FeturedContent_hov">
+                    <div class="FeturedContent_hov_cont">
+                        <img src="../src/assets/img/white_cart.png" alt="cart">
+                        <a href="SinglePage.html">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="FeturedContent">
+                <div class="FeturedContent_img">
+                    <img src="../src/assets/img/content5.jpg" alt="content">
+                </div>
+                <div class="FeturedContent_text">
+                    <p>Mango People T-shirt</p>
+                    <p class="p_cash">$52.00</p>
+                </div>
+                <div class="FeturedContent_hov">
+                    <div class="FeturedContent_hov_cont">
+                        <img src="../src/assets/img/white_cart.png" alt="cart">
+                        <a href="SinglePage.html">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="FeturedContent">
+                <div class="FeturedContent_img">
+                    <img src="../src/assets/img/content6.jpg" alt="content">
+                </div>
+                <div class="FeturedContent_text">
+                    <p>Mango People T-shirt</p>
+                    <p class="p_cash">$52.00</p>
+                </div>
+                <div class="FeturedContent_hov">
+                    <div class="FeturedContent_hov_cont">
+                        <img src="../src/assets/img/white_cart.png" alt="cart">
+                        <a href="SinglePage.html">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="FeturedContent">
+                <div class="FeturedContent_img">
+                    <img src="../src/assets/img/content7.jpg" alt="content">
+                </div>
+                <div class="FeturedContent_text">
+                    <p>Mango People T-shirt</p>
+                    <p class="p_cash">$52.00</p>
+                </div>
+                <div class="FeturedContent_hov">
+                    <div class="FeturedContent_hov_cont">
+                        <img src="../src/assets/img/white_cart.png" alt="cart">
+                        <a href="SinglePage.html">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="FeturedContent">
+                <div class="FeturedContent_img">
+                    <img src="../src/assets/img/content8.jpg" alt="content">
+                </div>
+                <div class="FeturedContent_text">
+                    <p>Mango People T-shirt</p>
+                    <p class="p_cash">$52.00</p>
+                </div>
+                <div class="FeturedContent_hov">
+                    <div class="FeturedContent_hov_cont">
+                        <img src="../src/assets/img/white_cart.png" alt="cart">
+                        <a href="SinglePage.html">Add to Cart</a>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+        <div class="allproduct">
+            <a href="product.html">Browse All Product
+
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="BottomBanner container">
+        <div class="women_win">
+            <div class="content_woomen">
+                <h2>30% <span>OFFER</span>
+                    <p>FOR WOMEN</p>
+                </h2>
+            </div>
+        </div>
+        <div class="botBannerInfo">
+            <div class="contentTop">
+                <div class="block_top">
+                    <h2>Free Delivery</h2>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                        models.</p>
+                </div>
+                <div class="block_mid">
+                    <h2>Sales &amp; discounts</h2>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                        models.</p>
+                </div>
+                <div class="block_bot">
+                    <h2>Quality assurance</h2>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                        models.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="infoForma">
+        <div class="container ContFoot">
+            <div class="info_one">
+                <div class="leter">
+                    <img src="../src/assets/img/ellipse.png" alt="face">
+                    <p><i><b>“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                                a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</b></i>
+                    </p>
+                    <p><span class="p_pink">Bin Burhan</span><br>Dhaka, Bd</p>
+                    <div class="pagination">
+                        <a href="#" class="pagination_a"></a>
+                        <a href="#" class="pagination_a_active"></a>
+                        <a href="#" class="pagination_a"></a>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="emailfor">
+                <h2>Subscribe </h2>
+                <p> FOR OUR NEWLETTER AND PROMOTIONX</p>
+
+                <form method="get" class="sub">
+                    <input class="email_put" type="email" placeholder="Enter Your Email">
+                    <button class="sub_button">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="footer container">
+            <div class="footer_info">
+                <div class="logo_b">
+                    <a href="#">Bran<span>d</span></a>
+                </div>
+                <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally
+                    syndicate
+                    multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of
+                    processes and cross-unit partnerships . <br> <br> Efficiently plagiarize 24/365 action items and
+                    focused
+                    infomediaries.Distinctively seize superior initiatives for wireless technologies. <br> Dynamically
+                    optimize.</p>
+            </div>
+            <div class="nav_b">
+                <div class="column_nav">
+                    <p class="nth">COMPANY</p>
+                    <a href="#">Home</a>
+                    <a href="#">Shop</a>
+                    <a href="#">About</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="column_nav">
+                    <p class="nth">INFORMATION</p>
+                    <a href="#">Tearms &amp; Condition</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">How to Buy</a>
+                    <a href="#">How to Sell</a>
+                    <a href="#">Promotion</a>
+                </div>
+                <div class="column_nav">
+                    <p class="nth">SHOP CATEGORY</p>
+                    <a href="#">Men</a>
+                    <a href="#">Women</a>
+                    <a href="#">Child</a>
+                    <a href="#">Apparel</a>
+                    <a href="#">Brows All</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer_p">
+            <div class="Foot_cont container">
+                <p>&copy; 2020 Brand All Rights Reserved</p>
+                <div class="social">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../src/components/basket.js"></script>
+    <script src="../src/components/catalog.js"></script>
+</body>
+
+</html>
