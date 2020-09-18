@@ -30,7 +30,20 @@
   .headerAccountAndCart {
     flex: none; } }
 
-
+.invisible {
+  display: none !important;
+}
+#basket {
+  background: #fff !important;
+  padding: 10px;
+}
+#basket-toggler {
+  width: 50px;
+  height: 35px;
+  background-image: url('../../assets/imgs/cart.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .dropdown .btn-lg {
   position: relative;
   padding: 0.15rem .75rem;
@@ -262,7 +275,7 @@
     position: absolute;
     width: 260px;
     left: -40px;
-    display: none; }
+ }
     @media (max-width: 650px) {
       .headerCart .headerCartWrap {
         left: -120px; } }
@@ -274,6 +287,7 @@
       border: 1px solid rgba(0, 0, 0, 0.15);
       border-radius: 5px; }
       .headerCart .headerCartWrap .headerCartWrapInAll .headerCartWrapIn {
+        background: #ffffff;
         margin-bottom: 1rem; }
       .headerCart .headerCartWrap .headerCartWrapInAll div {
         justify-content: space-between;
@@ -688,7 +702,7 @@
 /*-------------------------------FETURED END-----------------------------*/
 /*-------------------------------OFFER FOR WOMEN ST-----------------------------*/
 .offerWomenLeft {
-  background: url("../../assets/imgs/offerForWomen.jpg");
+  background: url("https://raw.githubusercontent.com/kellolo/static/master/img/JS1_shop/offer1.jpg");
   flex-shrink: 0;
   background-size: cover; }
   @media (max-width: 992px) {
