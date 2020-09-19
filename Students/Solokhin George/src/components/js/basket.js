@@ -1,10 +1,13 @@
-let basket = {
-    height: 400,
-    items: [],
-    container: null,
-    containerItems: null,
-    shown: false,
-    url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json',
+export default class Basket {
+    constructor() {
+        this.height= 400;
+        this.items=[];
+        this.container= null;
+        this.containerItems= null;
+        this.shown=false;
+        this.url= 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json'
+    }
+
     init() {
         this.container = document.querySelector('.dropdown-buy');
         this.containerItems = document.querySelector('.cart-products');
@@ -16,10 +19,10 @@ let basket = {
                 this._render();
                 this._handleActions();
             })
-    },
+    }
     _get(url) {
         return fetch(url).then(d => d.json());
-    },
+    }
     _render() {
         let htmlStr = '';
         this.items.forEach(item => {
@@ -52,7 +55,7 @@ let basket = {
         });
         this.containerItems.innerHTML = htmlStr;
         this.totalPrice();
-    },
+    }
     totalPrice(){
         let sum=0;
         this.items.forEach(item=>{
@@ -60,26 +63,19 @@ let basket = {
         })
         let tPrice=document.querySelector("#total-cart-price");
         tPrice.innerHTML="$"+sum;
-    },
+    }
     _handleActions() {
         document.querySelector('.header__cart').addEventListener('click', () => {
             this.container.classList.toggle('invisible');
-            // document.querySelector('#basket').classList.toggle('invisible');
             this.shown = !this.shown;
         })
         let remove=document.querySelectorAll(".action > button");
-        // console.log(remove);
-        // remove.forEach(function (button) {
-        //     button.addEventListener('click', ev=>{
-        //         this._remove(ev.target.dataset.id);
-        //     })
-        // })
         this.container.addEventListener('click', ev => {
             if (ev.target.name == 'remove') {
                 this._remove(ev.target.dataset.id);
             }
         })
-    },
+    }
     add(item) {
         let find = this.items.find(el => el.productId == item.productId);
         if (find) {
@@ -91,7 +87,7 @@ let basket = {
         }
         this.totalPrice();
         this._render();
-    },
+    }
     _remove(id) {
         let find = this.items.find(el => el.productId == id);
         if (find.amount > 1) {
@@ -105,5 +101,3 @@ let basket = {
         this._render();
     }
 }
-
-basket.init();

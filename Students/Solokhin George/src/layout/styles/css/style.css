@@ -102,7 +102,7 @@
 
 .logo {
   display: block;
-  background: url(../../../assets/imgs/logo.png) no-repeat;
+  background: url(https://raw.githubusercontent.com/GeorgeCybersport/JavaScript-Basic/master/4578e1c5c0e91bf4756ba681e63a96fa.png) no-repeat;
   background-blend-mode: overlay;
   padding-left: 72px;
   font-size: 27px;
@@ -375,7 +375,7 @@
     cursor: text; }
 
 .subscribe-box {
-  background: url(../../../assets/imgs/Layer_41.png) no-repeat #b7b7b7;
+  background: url(https://raw.githubusercontent.com/GeorgeCybersport/JavaScript-Basic/master/56019b185fd4fa94e2341f0fb2d949bd.png) no-repeat #b7b7b7;
   background-size: cover;
   background-blend-mode: overlay;
   z-index: 1;
@@ -589,7 +589,7 @@ a {
   width: 100%;
   background-color: #e8e8e8; }
   .topPicture > .container {
-    background: url(../../../assets/imgs/topHeaderBack.png) no-repeat;
+    background: url(https://raw.githubusercontent.com/GeorgeCybersport/JavaScript-Basic/master/3ae99ac6d7e27f6a3deef488d6245e0a.png) no-repeat;
     background-blend-mode: overlay;
     height: 405px;
     background-position: top right;
@@ -780,7 +780,7 @@ a {
     display: flex; }
 
 .offer-textbox {
-  background-image: url(../../../assets/imgs/Image.png);
+  background-image: url(https://raw.githubusercontent.com/kellolo/kellolo-js-2-21-1209/master/Students/Alina%20Churkina/project/src/assets/img/5_sale/sale.jpg);
   height: 383px;
   width: 767px;
   padding-top: 146px;

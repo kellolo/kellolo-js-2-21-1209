@@ -1,9 +1,12 @@
-let catalog = {
-    container: null,
-    items: [],
-    basket: null,
-    url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json',
-    init() {
+ export default class Catalog {
+    constructor() {
+        this.container= null;
+        this.items= [];
+        this.basket=null;
+        this.url='https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json';
+    }
+
+    init(basket) {
         this.container = document.querySelector('.f-blocks');
         this.basket = basket;
         this._get(this.url)
@@ -14,13 +17,13 @@ let catalog = {
                 this._render();
                 this._handleActions();
             })
-    },
+    }
     _get(url) {
         return fetch(url).then(d => d.json());
-    },
+    }
     _fillCatalog() { //Инкапсуляция (условная для JS)
         this.items = getArrayOfObjects();
-    },
+    }
     _render() {
         let htmlStr = '';
         this.items.forEach(item => {
@@ -46,7 +49,7 @@ data-img="${item.productImg}"
 </div>`
         });
         this.container.innerHTML = htmlStr;
-    },
+    }
     _handleActions() {
         this.container.addEventListener('click', ev => {
             if (ev.target.classList.contains('add') && ev.target.tagName=="BUTTON") {
@@ -58,7 +61,7 @@ data-img="${item.productImg}"
             }
 
         })
-    },
+    }
     _createNewItem(dataset) {
         return {
             productId: dataset.id,
@@ -69,5 +72,3 @@ data-img="${item.productImg}"
         }
     }
 }
-
-catalog.init();

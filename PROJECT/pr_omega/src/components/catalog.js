@@ -94,6 +94,7 @@ let catalog = {
             if (ev.target.name == 'add') {
                 let dataset = ev.target.dataset;
                 this.basket.add(this._createNewItem(dataset));
+                console.log(this.basket);
             }
         })
     },
