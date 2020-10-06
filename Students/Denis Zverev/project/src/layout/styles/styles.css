@@ -275,6 +275,7 @@
     position: absolute;
     width: 260px;
     left: -40px;
+    z-index: 10
  }
     @media (max-width: 650px) {
       .headerCart .headerCartWrap {
