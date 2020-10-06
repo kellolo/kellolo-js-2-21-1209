@@ -28,14 +28,15 @@ function renderCatalogItem(item) {
                 <h2><a href="#" class="product__name">${item.productName}</a></h2>
                 <p class="product__price">$${item.productPrice}</p>
             </div>
-            <a href="#" class="product__add"
+            <button class="product__add"
                         name="add"
                         data-id="${item.productId}"
                         data-name="${item.productName}"
                         data-price="${item.productPrice}"
                         data-img="${item.productImg}">
-                <img src="../src/assets/imgs/addToCart.png" alt="Корзина"> Add to Cart
-            </a>
+                Add to Cart
+            </button>
+            <img src="../src/assets/imgs/addToCart.png" alt="Корзина">
         </section>
     `
 }
