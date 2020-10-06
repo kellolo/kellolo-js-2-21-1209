@@ -13,7 +13,7 @@ const appVue = new Vue({
             return fetch(url).then(d => d.json())
         },
 
-        buy(item) {
+        add(item) {
             console.log(item)
             let find = this.basketItems.find(el => el.productId == item.productId);
             if (find) {
