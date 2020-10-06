@@ -36,7 +36,17 @@ export default class List {
         let arr = this.filtered ? this.filtered : this.items;
         arr.forEach(item => {
             str += new Item(item, type[this.constructor.name]).render()
-        })
+        });
+        if (type[this.constructor.name] == 'basket'){
+            str += `
+                <div class="headerCartWrapTotalPrice">
+                    <div>total</div>
+                    <div>$500.00</div>
+                </div>
+                <button type="button" class="button productsButtonIndex">Checkout</button>
+                <button type="button" class="button productsButtonIndex">Go to cart</button>
+            `
+        };
         this.container.innerHTML = str;
     }
 

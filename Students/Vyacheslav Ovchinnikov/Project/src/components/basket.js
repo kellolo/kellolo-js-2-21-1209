@@ -1,72 +1,10 @@
-class BasketItem {
-    constructor(item) {
-        this.item = item;
-    }
+import List from './list.js';
 
-    render() {
-        return `
-            <div class="d-flex headerCartWrapIn">
-                <a href="#" class="d-flex ">
-                    <img src="${this.item.productImg}" alt="photo">
-                    <div>
-                        <div>${this.item.productName}</div>
-                        <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
-                        <div class="headerCartWrapPrice">${this.item.amount} <span>x</span> $${this.item.productPrice}</div>
-                    </div>
-                </a>
-                <button 
-                    class="fas fa-times-circle" 
-                    data-id="${this.item.productId}"
-                    name="remove"
-                ></button>
-            </div>
-        `
-    }
-}
-
-class BasketInit {
-    init() {
-        this._get(this.url)
-            .then(basket => {
-                this.items = basket.content;
-            })
-            .finally(() => {
-                this._render();
-                this._handleActions();
-            })
-    }
-
-    _get(url) {
-        return fetch(url).then(d => d.json());
-    }
-}
-
-export default class Basket extends BasketInit {
+export default class Basket extends List {
     constructor(container = '#basket', url = '/basket.json') {
-        super(url);
-        this.items = [];
-        this.container = document.querySelector(container);
+        super(container, url);
         this.containerItems = document.querySelector('#basket-items');
         this.shown = false;
-        this.url = 'https://raw.githubusercontent.com/kellolo/static/master/JSON' + url;
-        this.init();
-    }
-
-    _render() {
-        let htmlStr = '';
-        this.items.forEach(item => {
-            htmlStr += new BasketItem(item).render();
-        });
-        htmlStr += `
-            <div class="headerCartWrapTotalPrice">
-                <div>total</div>
-                <div>$500.00</div>
-            </div>
-
-            <button type="button" class="button productsButtonIndex">Checkout</button>
-            <button type="button" class="button productsButtonIndex">Go to cart</button>
-        `;
-        this.container.innerHTML = htmlStr;
     }
 
     _handleActions() {
@@ -88,7 +26,9 @@ export default class Basket extends BasketInit {
         if (find) {
             find.amount++;
         } else {
-            this.items.push(item);
+            let newItem = Object.assign({}, item, { amount: 1 });
+            console.log(newItem)
+            this.items.push(newItem);
         }
         this._render();
     }
