@@ -10,9 +10,9 @@
       </form>
 
       <div class="headerCart" >
-        <button id="basket-toggler" class="header__cart"><img src="../src/assets/imgs/cart.png" alt="cart" class="header__cart"  @click="showBask = !showBask"></button>
+        <button id="basket-toggler" class="header__cart"><img src="https://github.com/Alaya95/static/blob/master/img/JS1_shop/cart.png?raw=true" alt="cart" class="header__cart"  @click="showBasket = !showBasket"></button>
 
-        <Basket v-show="showBasket" ref="basket" />
+        <basket v-show="showBasket" ref="basket" />
 
 
       </div>
@@ -92,7 +92,7 @@
       <div class="feature__box">
 
         <div class="feature__box-cont">
-          <img src="../src/assets/imgs/delivery.png" alt="delivery">
+          <img src="./assets/imgs/delivery.png" alt="delivery">
           <div class="feature__box-text">
             <p>Free Delivery</p>
             <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
@@ -100,7 +100,7 @@
         </div>
 
         <div class="feature__box-cont">
-          <img src="../src/assets/imgs/sales.png" alt="sale">
+          <img src="./assets/imgs/sales.png" alt="sale">
           <div class="feature__box-text">
             <p>Sales & discounts</p>
             <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
@@ -108,7 +108,7 @@
         </div>
 
         <div class="feature__box-cont">
-          <img src="../src/assets/imgs/assurance.png" alt="accurance">
+          <img src="./assets/imgs/assurance.png" alt="accurance">
           <div class="feature__box-text">
             <p>Quality assurance</p>
             <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
@@ -120,7 +120,7 @@
     <div class="subscribeBG">
       <div class="subscribe container">
         <div class="subscribe__block">
-          <img src="../src/assets/imgs/Layer_40.png" alt="photo">
+          <img src="./assets/imgs/Layer_40.png" alt="photo">
           <div class="subscribe__block-text">
             <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
             <p>Bin Burhan <br><span>Dhaka, Bd</span></p>
@@ -130,7 +130,7 @@
         <div class="subscribe__blockFeedback">
           <div class="subscribe__blockFeedback-text">
             <h3>Subscribe</h3>
-            <p>For our newletter and promotion</p>
+            <p>For our new letter and promotion</p>
           </div>
           <form action="subscribe-form"  class="subscribeForm">
             <input type="email" name="mail" placeholder="Enter Your Email">
@@ -215,4 +215,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+
+</style>

@@ -1,32 +1,17 @@
 <template>
   <div id="basket" class="headerCartWrap">
     <div class="headerCartWrapInAll">
-      <div class="headerCartWrapIn" v-for="item of items" :key="item.productId">
-        <div class="basketItemImg">
-          <img :src="item.productImg" alt="productPhoto" width="85" height="100">
-        </div>
-        <div class="basketInfoProduct">
-          <div class="BasketItemName">{{  item.productName  }}</div>
-          <span>
-             <i class="fas fa-star goldenStar"></i>
-             <i class="fas fa-star goldenStar"></i>
-             <i class="fas fa-star goldenStar"></i>
-             <i class="fas fa-star goldenStar"></i>
-             <i class="fas fa-star-half-alt goldenStar"></i>
-          </span>
-          <div class="headerCartWrapPrice">{{  item.amount  }} <span>x</span> ${{  item.productPrice  }}</div>
-        </div>
-        <button class="fas fa-times-circle"
-                name="remove"
-                :data-id="item.productId"
-                @click="removeItem(item)"
-                >
-        </button>
-      </div>
+     <item
+     v-for="item of items"
+     :key="item.productId"
+     :item="item"
+     :type="'basket'"
+     />
+
 
       <div class="headerCartWrapTotalPrice">
         <div>total</div>
-        <div>$500.00</div>
+        <div>$ {{ totalPrice }}</div>
       </div>
       <button type="button" class="productsButtonIndex">Checkout</button>
       <button type="button" class="productsButtonIndex">Go to cart</button>
@@ -35,9 +20,9 @@
 </template>
 
 <script>
-//import Item from './Item.vue'
+import Item from './Item.vue'
 export default {
- // components: {  Item  },
+  components: {  Item  },
   data() {
     return {
       items: [],
@@ -45,7 +30,7 @@ export default {
     }
   },
   methods: {
-    _get(url) {
+    get(url) {
       return fetch(url).then(d => d.json())
     },
     add(item) {
@@ -59,7 +44,6 @@ export default {
         this.items.push(newItem);
       }
     },
-
     removeItem(item) {
       let find = this.items.find(el =>  el.productId == item.productId);
       if (find.amount > 1) {
@@ -71,6 +55,17 @@ export default {
   },
   mounted() {
     this.get(this.url).then(basket => {this.items = basket.content})
+  },
+  computed: {
+    totalPrice() {
+      let total = 0;
+
+      for (let item of this.items) {
+        total +=  +item.amount * +(item.productPrice);
+      }
+
+      return total;
+    }
   }
 }
 </script>

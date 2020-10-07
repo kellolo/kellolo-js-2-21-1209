@@ -5,6 +5,7 @@
           v-for="item in items"
           :key="item.productId"
           :item="item"
+          :type="'catalog'"
       />
     </div>
   </div>
