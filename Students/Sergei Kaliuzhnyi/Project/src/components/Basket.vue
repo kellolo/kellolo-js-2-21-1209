@@ -1,43 +1,34 @@
 <template>
     <div class="header__cart-drop">
-                    <button class="header__basket-button" id="basket-toggler"><img
-                            class="header__cart" src="" alt="cart"></button>
-
-                    <div class="header__drop">
-
-                        <!--<div class="header__dropcost">
-                        <p>total</p>
-                        <p>550</p>
-                    </div>
-                    <a href="checkout.html" class="header__dropbutton">Checkout</a>
-                    <a href="shopping_cart.html" class="header__dropbutton">Go to cart</a>-->
-                        <div class="header__dropbox" v-for="item of items" :key="item.productId">
-                            <a href="single_page.html">
-                                <img :src="item.productImg" class="header__dropimg" alt="" width="85" height="100">
-                            </a>
-                            <div class="header__dropcontent">
-                                <a href="single_page.html">
-                                    <h3 class="header__dropname">{{ item.productName }}</h3>
-                                    <img src="" alt="">
-                                    <p class="header__dropprice">{{ item.amount }} Х {{ item.productPrice }}</p>
-                                </a>
-                            </div>
-                            <button @click="buy(item)" class="header__cart-drop-button fas fa-times-circle"></button>
-                        </div>
-
-                    </div>
+        <div class="header__drop">
+        <span>ИТОГО: {{ getSum }}</span>
+            <Item 
+                v-for="item of items" 
+                :key="item.productId"
+                :item="item"
+                typeOfItem="basket"
+            />                      
         </div>
+    </div>
 </template>
 
 <script>
+import Item from './Item.vue'
 
 // import Item from './item.vue'
 export default {
-    // components: { Item },
+    components: { Item },
     data() {
         return {
             items: [],
             url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json'
+        }
+    },
+    computed:{
+        getSum(){
+            let result = 0;
+            this.items.map (el => result += (el.productPrice * el.amount));
+            return result;
         }
     },
     methods: {

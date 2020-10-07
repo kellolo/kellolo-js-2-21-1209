@@ -4,6 +4,7 @@
             v-for="item of items" 
             :key="item.productId"
             :item="item"
+            typeOfItem="catalog"
         />
     </div>
 </template>
@@ -25,10 +26,6 @@ export default {
     },
     mounted() {
         this._get(this.url).then(items => { this.items = items });
-
-        console.log(this)
-        console.log(this.$parent)
-        console.log(this.$root)
     }
 }
 </script>

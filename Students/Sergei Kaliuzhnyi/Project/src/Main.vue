@@ -3,17 +3,19 @@
         <header class="header center">
             <div class="header__left">
                 <a class="logo" href="index.html">
-                    <img class="logo__img" src="" alt="logo">BRAN<span class="accent">D</span>
+                    <img class="logo__img" src="https://raw.githubusercontent.com/eqillibrium/My_Store_API/master/logo.png" alt="logo">BRAN<span class="accent">D</span>
                 </a>
                 <form class="header__form" action="#">
                     <div class="browse">Browse <i class="fa fa-sort-desc browse__icon" aria-hidden="true"></i></div>
                     <input type="text" value="Search for Item..." class="input_text">
-                    <button class="search_button"><img src="" alt="search"></button>
+                    <button class="search_button"><img src="https://raw.githubusercontent.com/eqillibrium/My_Store_API/master/search.png" alt="search"></button>
                 </form>
             </div>
             <div class="header__right">
+                <button class="header__basket-button" id="basket-toggler" @click="showBasket = !showBasket"><img
+                            class="header__cart" src="https://raw.githubusercontent.com/eqillibrium/My_Store_API/master/basket.png" alt="cart"></button>
                 
-                <Basket />
+                <Basket v-show="showBasket" ref="basket"/>
 
                 <a href="#" class="button">My Account <i class="fa fa-sort-desc button__icon"
                         aria-hidden="true"></i></a>
