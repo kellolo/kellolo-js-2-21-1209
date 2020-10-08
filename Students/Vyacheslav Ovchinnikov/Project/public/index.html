@@ -5,9 +5,10 @@
         <title>Main Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="https://kit.fontawesome.com/861689887d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../src/layout/styles/styles.css">
     </head>
     <body>
-        <div class="wrap">
+        <div class="wrap" id="app">
 
             <div class="top">
 
@@ -21,12 +22,36 @@
                         </form>
                     </div>
                     <div class="header__right">
-                        <a class="cart" href="#" id="basket-toggler"><img class="header__cart" src="../src/assets/imgs/cart.png" alt="Basket"></a>
+                        <a class="cart" href="#" id="basket-toggler" @click="showBasket = !showBasket"><img class="header__cart" src="../src/assets/imgs/cart.png" alt="Basket"></a>
                                                 
                         <div class="headerCartWrap">
                             <div class="headerCartWrapBlock"></div>
-                            <div class="headerCartWrapInAll invisible" id="basket"> 
-                                <!-- ВСТРАИВАЕМОЕ СОДЕРЖИМОЕ-->                                
+                            <div class="headerCartWrapInAll invisible" id="basket" v-show="showBasket"> 
+                                <div class="d-flex headerCartWrapIn" v-for="item of items">
+                                    <a href="#" class="d-flex ">
+                                        <img :src="item.productImg" alt="photo">
+                                        <div>
+                                            <div>{{ item.productName }}</div>
+                                            <span><i class="fas fa-star"></i>
+                                                  <i class="fas fa-star"></i>
+                                                  <i class="fas fa-star"></i>
+                                                  <i class="fas fa-star"></i>
+                                                  <i class="fas fa-star-half-alt"></i>
+                                            </span>
+                                            <div class="headerCartWrapPrice">${item.amount} <span>x</span> $ {{ item.productPrice }}</div>
+                                        </div>
+                                    </a>
+                                    <button class="fas fa-times-circle" 
+                                            data-id="${item.productId}"
+                                            name="remove">
+                                    </button>
+                                </div>
+                                <div class="headerCartWrapTotalPrice">
+                                    <div>total</div>
+                                    <div>$500.00</div>
+                                </div>
+                                <button type="button" class="button productsButtonIndex">Checkout</button>
+                                <button type="button" class="button productsButtonIndex">Go to cart</button>
                             </div>
                         </div>
 
@@ -339,8 +364,25 @@
                 <main class="product-box center">
                     <h1 class="product-box__head">Fetured Items</h1>
                     <p class="product-box__desc">Shop for items based on what we featured in this week</p>
-                    <div class="product-box center" id="catalog">
-                        <!-- ВСТРАИВАЕМОЕ СОДЕРЖИМОЕ -->  
+                    <div class="product-box center" id="catalog" v-show="showCatalog">
+                        <section class="product" v-for="item of items">
+                            <a href="#">
+                                <img class="product__img" :src="item.productImg" alt="photo">
+                            </a>
+                            <div class="product__content">
+                                <h2><a href="#" class="product__name">{{ item.productName }}</a></h2>
+                                <p class="product__price">$ {{ item.productPrice }}</p>
+                            </div>
+                            <button class="product__add"  @click="buy(item)"
+                                        name="add"
+                                        data-id="${item.productId}"
+                                        data-name="${item.productName}"
+                                        data-price="${item.productPrice}"
+                                        data-img="${item.productImg}">
+                                Add to Cart
+                            </button>
+                            <img src="../src/assets/imgs/addToCart.png" alt="Корзина">
+                        </section>
                     </div>
                 </main>
 
@@ -451,6 +493,46 @@
             </div>
 
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: '#app',
+                data: {
+                    showCalc: false,
+                    showCatalog: true,
+                    showBasket: true,
+                    catalogUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json',
+                    items: [],
+                    basketItems: []
+                },
+                computed: {
+                    
+                },
+                methods: {
+                    get(url) {
+                        return fetch(url)
+                        .then(d => d.json())
+                    },
+                    buy(item) {
+                        if (item.amount === undefined) {
+                            let newItem = Object.assign({}, item, { amount: 1 });
+                            return console.log(newItem)
+                        } else {
+                            item.amount += 1;
+                            return console.log(item)
+                        } 
+                    }
+                },
+                //hooks
+                mounted() {
+                    this.get(this.catalogUrl)
+                    .then(items => {
+                        this.items = items;
+                        console.log(this.items);                  
+                    })
+                },
+            });
+        </script>
 
     </body>
 </html>
