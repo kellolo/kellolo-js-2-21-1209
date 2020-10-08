@@ -42,7 +42,7 @@
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star-half-alt"></i>
                                             </span>
-                                            <div class="headerCartWrapPrice">${item.amount} <span>x</span> $ {{ item.productPrice }}</div>
+                                            <div class="headerCartWrapPrice">{{item.amount}} <span>x</span> $ {{ item.productPrice }}</div>
                                         </div>
                                     </a>
                                     <button class="fas fa-times-circle" 
@@ -377,7 +377,7 @@
                                 <p class="product__price">$ {{ item.productPrice }}</p>
                             </div>
                             <button class="product__add"  
-                                    @click="byu(item)"
+                                    @click="add(item)"
                             >
                                 Add to Cart
                             </button>
@@ -494,60 +494,5 @@
 
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script>
-            const app = new Vue({
-                el: '#app',
-                data: {
-                    showBasket: false,
-                    catalogUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json',
-                    basketUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json',
-                    basketItems: [],
-                    catalogItems: [],
-                },
-                computed: {
-                    
-                },
-                methods: {
-                    get(url) {
-                        return fetch(url)
-                            .then(d => d.json())
-                    },
-                    // buy(item) {
-                    //     if (item.amount === undefined) {
-                    //         let newItem = Object.assign({}, item, { amount: 1 });
-                    //         return console.log(newItem)
-                    //     } else {
-                    //         item.amount += 1;
-                    //         return console.log(item)
-                    //     } 
-                    // },
-                    buy(item) {
-                        let find = this.basketItems.find(el => el.productId == item.productId);
-                        if (find) {
-                            find.amount++;
-                        } else {
-                            let newItem = Object.assign({}, item, { amount: 1 });
-                            console.log(newItem)
-                            this.basketItems.push(newItem);
-                        }
-                        this._render();
-                    },
-                    remove(id) {
-                        let find = this.basketItems.find(el => el.productId == id);
-                        if (find.amount > 1) {
-                            find.amount--;
-                        } else {
-                            this.basketItems.splice(this.basketItems.indexOf(find), 1);
-                        }
-                    }
-                },
-
-                mounted() {
-                    this.get(this.catalogUrl).then(items => { this.catalogItems = items });
-                    this.get(this.basketUrl).then(basket => { this.basketItems = basket.content });
-                },
-            });
-        </script>
-
     </body>
 </html>
