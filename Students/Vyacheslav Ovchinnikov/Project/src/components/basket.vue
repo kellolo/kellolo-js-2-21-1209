@@ -24,7 +24,7 @@
         </div>
         <div class="headerCartWrapTotalPrice">
             <div>total</div>
-            <div>$500.00</div>
+            <div>$ {{ productPrices }}</div>
         </div>
         <button type="button" class="button productsButtonIndex">Checkout</button>
         <button type="button" class="button productsButtonIndex">Go to cart</button>
@@ -37,6 +37,7 @@ export default {
     // components: { Item },
     data() {
         return {
+            productPrices: 0,
             items: [],
             url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json'
         }
@@ -46,13 +47,11 @@ export default {
             return fetch(url).then(d => d.json())
         },
         add(item) {
-            console.log(item)
             let find = this.items.find(el => el.productId == item.productId);
             if (find) {
                 find.amount++;
             } else {
                 let newItem = Object.assign({}, item, { amount: 1 });
-                console.log(newItem)
                 this.items.push(newItem);
             }
         },
@@ -67,7 +66,14 @@ export default {
         }
     },
     mounted() {
-        this._get(this.url).then(basket => { this.items = basket.content });
+        this._get(this.url).then(basket => { 
+            this.items = basket.content;
+            console.log(this.items)
+            this.items.forEach(el => {
+                this.items.productPrices += +this.productPrice;
+                console.log(this.items)
+            })
+        });
     }
 }
 </script>

@@ -32,10 +32,6 @@ export default {
                         productImg: 'https://placehold.it/80x120'
                     })
         },
-        number: {
-            type: Number,
-            default: 1000
-        }
     },
 }
 </script>
