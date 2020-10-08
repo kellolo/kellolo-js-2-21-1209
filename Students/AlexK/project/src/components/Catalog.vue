@@ -9,7 +9,7 @@
             <span>${{ itemsCatalog.productPrice }}.00</span>
         </div>
         <div class="b-item-overlay">
-            <button @click="add(itemsCatalog)">
+            <button @click="$parent.$refs.basket.add(itemsCatalog)">
                 <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-basket3" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"

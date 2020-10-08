@@ -10,7 +10,7 @@
                     <button class="search__find"><i class="fas fa-search"></i></button>
                 </form>
  
-                <Basket></Basket>
+                <Basket ref="basket"></Basket>
 
                 <button name="accountBar" class="header__account-bar">My Account <i
                         class="fas fa-caret-down"></i></button>
