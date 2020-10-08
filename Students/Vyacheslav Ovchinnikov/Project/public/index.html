@@ -26,24 +26,27 @@
                                                 
                         <div class="headerCartWrap">
                             <div class="headerCartWrapBlock"></div>
-                            <div class="headerCartWrapInAll invisible" id="basket" v-show="showBasket"> 
-                                <div class="d-flex headerCartWrapIn" v-for="item of items">
+                            <div class="headerCartWrapInAll" v-show="showBasket"> 
+                                <div class="d-flex headerCartWrapIn" 
+                                     v-for="item of basketItems"
+                                    :key="item.productId"
+                                >
                                     <a href="#" class="d-flex ">
                                         <img :src="item.productImg" alt="photo">
                                         <div>
                                             <div>{{ item.productName }}</div>
-                                            <span><i class="fas fa-star"></i>
-                                                  <i class="fas fa-star"></i>
-                                                  <i class="fas fa-star"></i>
-                                                  <i class="fas fa-star"></i>
-                                                  <i class="fas fa-star-half-alt"></i>
+                                            <span>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
                                             </span>
                                             <div class="headerCartWrapPrice">${item.amount} <span>x</span> $ {{ item.productPrice }}</div>
                                         </div>
                                     </a>
                                     <button class="fas fa-times-circle" 
-                                            data-id="${item.productId}"
-                                            name="remove">
+                                            @click="remove(item.productId)">
                                     </button>
                                 </div>
                                 <div class="headerCartWrapTotalPrice">
@@ -364,8 +367,8 @@
                 <main class="product-box center">
                     <h1 class="product-box__head">Fetured Items</h1>
                     <p class="product-box__desc">Shop for items based on what we featured in this week</p>
-                    <div class="product-box center" id="catalog" v-show="showCatalog">
-                        <section class="product" v-for="item of items">
+                    <div class="product-box center" id="catalog">
+                        <section class="product" v-for="item of catalogItems" :key="item.productId">
                             <a href="#">
                                 <img class="product__img" :src="item.productImg" alt="photo">
                             </a>
@@ -373,12 +376,9 @@
                                 <h2><a href="#" class="product__name">{{ item.productName }}</a></h2>
                                 <p class="product__price">$ {{ item.productPrice }}</p>
                             </div>
-                            <button class="product__add"  @click="buy(item)"
-                                        name="add"
-                                        data-id="${item.productId}"
-                                        data-name="${item.productName}"
-                                        data-price="${item.productPrice}"
-                                        data-img="${item.productImg}">
+                            <button class="product__add"  
+                                    @click="byu(item)"
+                            >
                                 Add to Cart
                             </button>
                             <img src="../src/assets/imgs/addToCart.png" alt="Корзина">
@@ -498,12 +498,11 @@
             const app = new Vue({
                 el: '#app',
                 data: {
-                    showCalc: false,
-                    showCatalog: true,
-                    showBasket: true,
+                    showBasket: false,
                     catalogUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json',
-                    items: [],
-                    basketItems: []
+                    basketUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json',
+                    basketItems: [],
+                    catalogItems: [],
                 },
                 computed: {
                     
@@ -511,25 +510,41 @@
                 methods: {
                     get(url) {
                         return fetch(url)
-                        .then(d => d.json())
+                            .then(d => d.json())
                     },
+                    // buy(item) {
+                    //     if (item.amount === undefined) {
+                    //         let newItem = Object.assign({}, item, { amount: 1 });
+                    //         return console.log(newItem)
+                    //     } else {
+                    //         item.amount += 1;
+                    //         return console.log(item)
+                    //     } 
+                    // },
                     buy(item) {
-                        if (item.amount === undefined) {
-                            let newItem = Object.assign({}, item, { amount: 1 });
-                            return console.log(newItem)
+                        let find = this.basketItems.find(el => el.productId == item.productId);
+                        if (find) {
+                            find.amount++;
                         } else {
-                            item.amount += 1;
-                            return console.log(item)
-                        } 
+                            let newItem = Object.assign({}, item, { amount: 1 });
+                            console.log(newItem)
+                            this.basketItems.push(newItem);
+                        }
+                        this._render();
+                    },
+                    remove(id) {
+                        let find = this.basketItems.find(el => el.productId == id);
+                        if (find.amount > 1) {
+                            find.amount--;
+                        } else {
+                            this.basketItems.splice(this.basketItems.indexOf(find), 1);
+                        }
                     }
                 },
-                //hooks
+
                 mounted() {
-                    this.get(this.catalogUrl)
-                    .then(items => {
-                        this.items = items;
-                        console.log(this.items);                  
-                    })
+                    this.get(this.catalogUrl).then(items => { this.catalogItems = items });
+                    this.get(this.basketUrl).then(basket => { this.basketItems = basket.content });
                 },
             });
         </script>
