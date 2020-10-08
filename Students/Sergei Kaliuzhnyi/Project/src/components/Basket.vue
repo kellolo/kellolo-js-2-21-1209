@@ -1,13 +1,18 @@
 <template>
     <div class="header__cart-drop">
         <div class="header__drop">
-        <span>ИТОГО: {{ getSum }}</span>
             <Item 
                 v-for="item of items" 
                 :key="item.productId"
                 :item="item"
                 typeOfItem="basket"
-            />                      
+            />
+            <div class="header__dropcost">
+                <p>total</p>
+                <p>{{ getSum }}</p>
+            </div>
+            <a href="checkout.html" class="header__dropbutton">Checkout</a>
+            <a href="shopping_cart.html" class="header__dropbutton">Go to cart</a>                      
         </div>
     </div>
 </template>

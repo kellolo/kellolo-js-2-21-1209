@@ -14,9 +14,9 @@
             <div class="header__right">
                 <button class="header__basket-button" id="basket-toggler" @click="showBasket = !showBasket"><img
                             class="header__cart" src="https://raw.githubusercontent.com/eqillibrium/My_Store_API/master/basket.png" alt="cart"></button>
-                
-                <Basket v-show="showBasket" ref="basket"/>
 
+                <Basket v-show="showBasket" ref="basket"/>
+                
                 <a href="#" class="button">My Account <i class="fa fa-sort-desc button__icon"
                         aria-hidden="true"></i></a>
             </div>
