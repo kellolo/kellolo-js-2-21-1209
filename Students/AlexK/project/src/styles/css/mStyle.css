@@ -111,6 +111,7 @@ body a {
 }
 
 .headerBasket_detail-item__about {
+  min-height: 115px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,6 +126,11 @@ body a {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.headerBasket_detail-item img {
+  width: 100px;
+  height: 115px;
 }
 
 .header {
