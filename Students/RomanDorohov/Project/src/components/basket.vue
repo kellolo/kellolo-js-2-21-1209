@@ -3,31 +3,13 @@
         <div class="headerCartWrapBlock"></div>
         <div class="headerCartWrapInAll" >
             <div class="headerCartWrapInAll">
-                <div 
-                    class="d-flex headerCartWrapIn mb-1 p-2"
+                <Item 
                     v-for="item of items"
-                    :key="item.productId"
-                >
-                    <img :src="item.productImg" alt="" width="85" height="100">
-                    <div>
-                        <div>{{ item.productName }}</div>
-                        <span>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </span>
-                        <div class="headerCartWrapPrice">{{ item.amount }} 
-                            <span>x</span> $ {{ item.productPrice }}
-                        </div>
-
-                        <button 
-                            class="fas fa-times-circle" 
-                            @click="remove(item.productId)"
-                        ></button>
-                    </div>
-                </div>
+                    :key="item.productId" 
+                    :item="item"
+                    type="basket"
+                    @rem="remove"
+                />
 
                 <div class="headerCartWrapTotalPrice">
                     <div>total</div>
@@ -42,9 +24,9 @@
 </template>
 
 <script>
-// import Item from './item.vue'
+import Item from './item.vue'
 export default {
-    // components: { Item },
+    components: { Item },
     data() {
         return {
             items: [],
