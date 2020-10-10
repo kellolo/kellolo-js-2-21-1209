@@ -8,7 +8,7 @@
                         <input type="checkbox" name="Browse" id="Browse">
                         <label  class="search__browse" for="Browse" id="buttonDropDownMenu">Browse <i class="fas fa-caret-down"></i></label>	
                         <div class="search--menu" aria-labelledby="buttonDropDownMenu">
-                            <NavLink />
+                            <NavLink class="nav-list"/>
                             <!-- <h3>Women</h3>
                             <div class="greyLine"></div>
                             <a href="#">Dresses</a>
@@ -52,7 +52,8 @@
                 </div>
                 <div class="topNav__list"><a href="#">Man</a>
                     <div class="topNav--dropDown">
-                        <h3>Women</h3>
+                        <NavLink class="nav-list " />
+                        <!-- <h3>Women</h3>
                         <div class="greyLine"></div>
                         <a href="#">Dresses</a>
                         <a href="#">Tops</a>
@@ -79,7 +80,7 @@
                         <a href="#">Dresses</a>
                         <a href="#">Tops</a>
                         <a href="#">Sweaters/Knits</a>
-                        <a href="#">Jackets/Coats</a>
+                        <a href="#">Jackets/Coats</a> -->
                         <a href="#"><img src="../src/assets/img/Promo_Ad.png" alt="promo"></a>
                     </div>
                     <div class="navLine"></div>
@@ -256,9 +257,9 @@
 </template>
 
 <script>
-    import Catalog from './components/Catalog.vue'
-    import Basket from './components/Basket.vue'
-    import NavLink from './components/NavLink.vue'
+    import Catalog from './components/Catalog.vue';
+    import Basket from './components/Basket.vue';
+    import NavLink from './components/NavLink.vue';
 
     export default {
         components: { Catalog, Basket, NavLink },

@@ -15,6 +15,8 @@ export default {
     props: {
         linkSection: {
             type: Object,
+        
+          
             default: () => ({
                 navsectionname: 'Women',
                 navlinks: ['Dresses', 'Tops', 'Sweaters', 'Jackets', 'Blazers', 'Denim', 'Leggings/Pants', 'Skirts/Shorts', 'Accessories']
