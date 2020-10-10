@@ -1,10 +1,13 @@
 <template>
     <div class="row" id="catalog">
-        <Item 
-            v-for="item of items" 
-            :key="item.productId"
-            :item="item"
-        />
+        <div class="feturedItems w-100 d-flex flex-wrap justify-content-around">
+            <Item 
+                v-for="item of items" 
+                :key="item.productId"
+                :item="item"
+                type="catalog"
+            />
+        </div>
     </div>
 </template>
 
@@ -15,7 +18,8 @@ export default {
     data() {
         return{
             items: [],
-            catalogUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json',
+            /* catalogUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json', */
+            catalogUrl: '/api/catalog',
         }
     },
     methods:{

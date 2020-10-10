@@ -1,13 +1,15 @@
 <template>
     <div class="headerCartWrap" id="basket">
-        <Item 
-            v-for="item of items"
-            :key="item.productId"
-            :item="item"
-        />
         <div class="headerCartWrapBlock"></div>
         <div class="headerCartWrapInAll">
-            <div id="basket-items" class="headerCartWrapInAll">
+            <div>
+                <Item 
+                    v-for="item of items"
+                    :key="item.productId"
+                    :item="item"
+                    type="basket"
+                    @rem =basketRemove
+                />
             </div>
 
             <div class="headerCartWrapTotalPrice">
@@ -23,13 +25,14 @@
 </template>
 
 <script>
-import Item from './basket_item.vue'
+import Item from './item.vue'
 export default {
     components: { Item },
     data() {
         return{
             items: [],
-            basketUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json',
+            /* basketUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json', */
+            basketUrl: '/api/basket',
         }
     },
     methods:{
