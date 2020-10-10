@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       items: [],
-      url: 'https://raw.githubusercontent.com/Alaya95/static/master/JSON/basket.json'
+      url: '/api/basket.json'
     }
   },
   methods: {
