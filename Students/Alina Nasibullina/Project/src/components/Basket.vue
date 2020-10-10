@@ -1,11 +1,13 @@
 <template>
     <div class="card-link--dropDown" id="basket">
         <div id="basket-items" class="headerCartWrapInAll" >
-            <ItemBasket 
-                    v-for="item of items" 
-                    :key="item.productId"
-                    :item="item"
-                />
+            <Item 
+                v-for="item of items" 
+                :key="item.productId"
+                :item="item"
+                type="basket"
+                @rem="remove"
+            />
         </div>
         <div>
             <p>TOTAL</p>
@@ -17,14 +19,16 @@
 </template>
 
 <script>
-import ItemBasket from './ItemBasket.vue'
+import Item from './Item.vue'
 
 export default {
-    components: { ItemBasket },
+    components: { Item },
     data() {
         return {
             items: [],
-            url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json'
+            // url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json'
+            url: '/api/basket'
+            // url: '/basket'
         }
     },
     computed: {
@@ -46,7 +50,6 @@ export default {
                 find.amount++;
             } else {
                 let newItem = Object.assign({}, item, { amount: 1 });
-                console.log(newItem)
                 this.items.push(newItem);
             }
         },
