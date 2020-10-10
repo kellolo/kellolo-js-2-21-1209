@@ -1,4 +1,5 @@
-import './layout/styles/style.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './layout/styles/styles.css'
 
 import Vue from 'vue'
 import Main from './Main.vue'

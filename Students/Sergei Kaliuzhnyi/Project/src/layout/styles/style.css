@@ -382,7 +382,6 @@ a {
 
 .header__cart-drop {
   position: relative;
-  width: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -392,7 +391,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50px;
+  z-index: 1;
 }
 
 .header__cart-drop-button {
@@ -400,9 +399,17 @@ a {
   border: none;
 }
 
+.header__cart-drop-button:focus {
+  outline: none;
+}
+
 .header__basket-button {
   background: none;
   border: none;
+}
+
+.header__basket-button:focus {
+  outline: none;
 }
 
 .header__drop {
@@ -411,7 +418,8 @@ a {
   padding: 5px 15px;
   position: absolute;
   top: 50px;
-  left: 0px;
+  left: -76px;
+  width: 200px;
 }
 
 .header__dropimg {
