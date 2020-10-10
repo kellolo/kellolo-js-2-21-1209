@@ -20,18 +20,7 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|svg|gif)$/i,
                 use: ['file-loader']
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    // Creates `style` nodes from JS strings
-                    'style-loader',
-                    // Translates CSS into CommonJS
-                    'css-loader',
-                    // Compiles Sass to CSS
-                    'sass-loader',
-                ],
-            },
+            }
         ]
     },
     plugins: [
@@ -41,12 +30,22 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: './src/assets/img', to: 'img' },
+                { from: './src/assets/imgs', to: 'img' },
             ],
-        }),
+          }),
         new HtmlWebpackPlugin({
             template: './public/index.html'
         }),
         new VueLoaderPlugin()
-    ]
+    ],
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                pathRewrite: { '^/api': '' },
+                secure: false,
+                changeOrigin: true
+            }
+        }
+    }
 }
