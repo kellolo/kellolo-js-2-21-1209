@@ -25,6 +25,7 @@ export default {
     },
     mounted() {
         get(this.url).then(items => { this.items = items });
+
         console.log(this)
         console.log(this.$parent)
         console.log(this.$root)
@@ -33,4 +34,5 @@ export default {
 </script>
 
 <style>
+
 </style>

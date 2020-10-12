@@ -26,6 +26,7 @@
 <script>
 import Item from './item.vue'
 import { get, post, put, del } from '../libraries/requests'
+
 export default {
     components: { Item },
     data() {
@@ -82,4 +83,5 @@ export default {
 </script>
 
 <style>
+
 </style>
