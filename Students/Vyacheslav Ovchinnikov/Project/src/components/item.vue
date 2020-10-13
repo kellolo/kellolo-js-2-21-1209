@@ -34,7 +34,8 @@
                     </div>
                 </a>
                 <button class="fas fa-times-circle" 
-                        @click="$parent.remove(item.productId)">
+                        @click="$emit('rem', item.productId)"
+                >
                 </button>
             </div>
         </template>        

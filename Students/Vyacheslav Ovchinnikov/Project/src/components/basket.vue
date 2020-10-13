@@ -5,6 +5,7 @@
             :key="item.productId"
             :item="item"
             type="basket"
+            @rem="remove"
         />
         <div class="headerCartWrapTotalPrice">
             <div>total</div>
