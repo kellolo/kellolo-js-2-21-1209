@@ -13,6 +13,7 @@
 
 <script>
 import Item from './item.vue'
+import { get } from '../libraries/requests'
 export default {
     components: { Item },
     data() {
@@ -22,13 +23,8 @@ export default {
             // url: '/catalog' //for Build
         }
     },
-    methods: {
-        _get(url) {
-            return fetch(url).then(d => d.json())
-        },
-    },
     mounted() {
-        this._get(this.url).then(items => { this.items = items });
+        get(this.url).then(items => { this.items = items });
         console.log(this)
         console.log(this.$parent)
         console.log(this.$root)
