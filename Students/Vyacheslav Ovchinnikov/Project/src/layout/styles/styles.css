@@ -292,8 +292,10 @@ a.logo {
   .product .product__add:active {
     box-shadow: 0px 0px 1px 0px #ffffff;
   }
-    .product:hover img {
-      margin-right: 1rem; }
+    .product:hover .card__photo{
+      margin-left: 1rem;
+      width: 15%;
+    }
   .product__content {
     padding: 1.9rem 1.5rem;
     text-align: left; }

@@ -1,7 +1,12 @@
 <template>
-  <div id="catalog" class="product-box center">
-    <Item v-for="item of items" :key="item.productId" :item="item" />
-  </div>
+    <div id="catalog" class="product-box center">
+        <Item 
+            v-for="item of items" 
+            :key="item.productId" 
+            :item="item"
+            type="catalog"
+        />
+    </div>
 </template>
 
 <script>
