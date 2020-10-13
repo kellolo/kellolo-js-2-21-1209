@@ -24,7 +24,7 @@
         </div>
         <div class="headerCartWrapTotalPrice">
             <div>total</div>
-            <div>$ {{ productPrices }}</div>
+            <div>$500.00</div>
         </div>
         <button type="button" class="button productsButtonIndex">Checkout</button>
         <button type="button" class="button productsButtonIndex">Go to cart</button>
@@ -37,7 +37,6 @@ export default {
     // components: { Item },
     data() {
         return {
-            productPrices: 0,
             items: [],
             url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json'
         }
@@ -66,14 +65,7 @@ export default {
         }
     },
     mounted() {
-        this._get(this.url).then(basket => { 
-            this.items = basket.content;
-            console.log(this.items)
-            this.items.forEach(el => {
-                this.items.productPrices += +this.productPrice;
-                console.log(this.items)
-            })
-        });
+        this._get(this.url).then(basket => { this.items = basket.content });
     }
 }
 </script>

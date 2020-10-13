@@ -21,18 +21,7 @@
 
 <script>
 export default {
-    //props: ['item'],
-    props: {
-        item: {
-            type: Object,
-            default: () => ({
-                        productName: 'Qwert',
-                        productPrice: 100500,
-                        productId: '100500qqq',
-                        productImg: 'https://placehold.it/80x120'
-                    })
-        },
-    },
+    props: ['item'],
 }
 </script>
 
