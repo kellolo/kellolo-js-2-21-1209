@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "api": "node server"
+    "api": "nodemon server"
+  },
+  "nodemonConfig": {
+    "ignor": ["*.json"]
   },
   "keywords": [],
   "author": "",
