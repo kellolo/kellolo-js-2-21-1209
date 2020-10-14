@@ -16,6 +16,11 @@ server.get('/catalog', (req, res) => {
     res.json(data);
 });
 
+server.get('/basket', (req, res) => {
+    let dataBas = JSON.parse(fs.readFileSync('./server/db/basket.json', 'utf-8'));
+    res.json(dataBas);
+});
+
 // server.get('/', (req, res) => {
 //     res.send('Hello')
 // });
