@@ -26,30 +26,36 @@
         </template>
         <template v-else-if="type == 'basket'">
             <div 
-                    class="d-flex headerCartWrapIn mb-1 p-2"
-                >
-                    <img :src="item.productImg" alt="" width="85" height="100">
-                    <div>
-                        <div>{{ item.productName }}</div>
-                        <span>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </span>
-                        <div class="headerCartWrapPrice">{{ item.amount }} 
-                            <span>x</span> $ {{ item.productPrice }}
-                        </div>
-
-                        <button 
-                            class="fas fa-times-circle" 
-                            @click="$emit('rem', item.productId)"
-                        ></button>
+                class="d-flex headerCartWrapIn mb-1 p-2"
+            >
+                <img :src="item.productImg" alt="" width="85" height="100">
+                <div>
+                    <div>{{ item.productName }}</div>
+                    <span>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <div class="headerCartWrapPrice">{{ item.amount }} 
+                        <span>x</span> $ {{ item.productPrice }}
                     </div>
+                            <!--Хватаемся за родительский метод напрямую-->
+                    <!--button 
+                        class="fas fa-times-circle" 
+                        @click="$parent.remove(item.productId)"
+                    ></button-->
+
+
+                        <!--Создаем пользовательское событие-->
+                    <button 
+                        class="fas fa-times-circle" 
+                        @click="$emit('rem', item.productId)"
+                    ></button>
                 </div>
-        </template>
-        
+            </div>
+        </template>        
     </div>
 </template>
 
@@ -60,4 +66,5 @@ export default {
 </script>
 
 <style>
+
 </style>
