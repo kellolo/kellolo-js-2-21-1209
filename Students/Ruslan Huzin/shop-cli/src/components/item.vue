@@ -6,7 +6,7 @@
                     <div class="feturedImgWrap">
                         <div class="feturedBuy">
                             <button class="hover_cart" name="add"
-                                @click="$parent.$parent.$refs.basketComponent.basketAdd(item)">
+                                @click="$parent.$parent.$children[1].$refs.basketComponent.basketAdd(item)">
                                 <i class="fas fa-shopping-cart"></i> Add to Cart
                             </button>
                         </div>
