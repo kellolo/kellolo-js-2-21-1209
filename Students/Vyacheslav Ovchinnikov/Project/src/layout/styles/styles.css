@@ -79,6 +79,9 @@ a.logo {
       line-height: 4rem;
       color: #222222;
       font-weight: 400; }
+    .header__left .search .search__browse:hover {
+      background-color: #f38191;
+    }
       .header__left .search__browse i:first-child {
         color: #838383; }
     .header__left .search input {
@@ -283,7 +286,13 @@ a.logo {
     color: white;
     font-size: 1.3rem;
     font-weight: 700; }
-    .product:hover .product__add img {
+  .product .product__add:focus {
+    outline: none;
+  }
+  .product .product__add:active {
+    box-shadow: 0px 0px 1px 0px #ffffff;
+  }
+    .product:hover img {
       margin-right: 1rem; }
   .product__content {
     padding: 1.9rem 1.5rem;
