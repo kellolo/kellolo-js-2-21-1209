@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Main Page</title>
-    <!-- <link rel="stylesheet" href="../src/styles/css/mStyle.css">
-    <link rel="stylesheet" href="../src/styles/css/style.css"> -->
-    <script src="https://kit.fontawesome.com/861689887d.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-
-<body>
-    <div id="app">
-        <header>
-            <div class="header container">
+<template>
+  <div>
+    <header>
+      <div class="header container">
                 <a href="#" class="logo">Bran<span>d</span></a>
 
                 <form method="get" class="search">
@@ -21,46 +9,17 @@
                     <input type="text" name="search" placeholder="Search for Item...">
                     <button class="search__find"><i class="fas fa-search"></i></button>
                 </form>
+ 
+                <Basket ref="basket"></Basket>
 
-                <div class="headerBasket">
-                    <img src="img/cart.png" alt="cart" @click="basketShow = !basketShow">
-                    <div class="headerBasket_count" id="basketTotal">2</div>
-                    <div class="headerBasket_detail" v-show="basketShow">
-                        <div class="headerBasket_detail_items">
-                            <div class="headerBasket_detail-item" v-for="basket of itemsBasket">
-                                <img :src="basket.productImg">
-                                <div class="headerBasket_detail-item__about">
-                                    <div class="headerBasket_detail-item__about__name">{{ basket.productName }}</div>
-                                    <div class="headerBasket_detail-item__about__raiting">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="headerBasket_detail-item__about__amount">
-                                        ${{basket.productPrice }} x {{ basket.amount }}
-                                    </div>
-                                </div>
-                                <button class="btn btn-cl" @click="remove(basket.productId)"><i class="fas fa-times-circle"></i></button>
-                            </div>
-
-                        </div>
-                        <nav>
-                            <button class="btn btn-pink">Go to cart</button>
-                            <button class="btn btn-pink">Checkout</button>
-                        </nav>
-
-                    </div>
-                </div>
                 <button name="accountBar" class="header__account-bar">My Account <i
                         class="fas fa-caret-down"></i></button>
-            </div>
+      </div>
 
-            <div class="headerLine"></div>
-        </header>
+      <div class="headerLine"></div>
+    </header>
 
-        <nav class="topNav">
+    <nav class="topNav">
             <a href="#">Home</a>
             <a href="#">Man</a>
             <a href="#">Women</a>
@@ -68,9 +27,9 @@
             <a href="#">Accoseriese</a>
             <a href="#">Featured</a>
             <a href="#">Hot Deals </a>
-        </nav>
+    </nav>
 
-        <main>
+    <main>
             <div class="topBanner">
                 <div class="container">
                     <div class="redBlock"></div>
@@ -85,58 +44,35 @@
                         hOT dEAL <br>
                         <span>FOR MEN</span>
                     </div>
-                    <img src="../src/assets/img/offer1.jpg" alt="HotDeal">
+                    <img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/offer1.jpg" alt="HotDeal">
                 </div>
 
                 <div class="offers__link">
                     <div class="offers__text">
                         LUXIROUS & trendy <br>
                         <span>ACCESORIES</span>
-                    </div><img src="../src/assets/img/offer2.jpg" alt="">
+                    </div><img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/offer2.jpg" alt="">
                 </div>
                 <div class="offers__link">
                     <div class="offers__text">
                         30% offer<br>
                         <span>women</span>
-                    </div><img src="../src/assets/img/offer3.jpg" alt="">
+                    </div><img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/offer3.jpg" alt="">
                 </div>
                 <div class="offers__link">
                     <div class="offers__text">
                         new arrivals <br>
                         <span>FOR kids</span>
-                    </div><img src="../src/assets/img/offer4.jpg" alt="">
+                    </div><img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/offer4.jpg" alt="">
                 </div>
             </div>
             <div class="heading container">
                 <span>Fetured Items</span>
                 <span>Shop for items based on what we featured in this week</span>
             </div>
-            <section class="b-shoplist container" id="catalog">
-                <div class="b-item" v-for="item of itemsCatalog">
-                    <div class="b-item-pic">
-                        <img :src="item.productImg" alt="1">
-                    </div>
-                    <div class="b-item-txt">
-                        <span>{{ item.productName }}</span>
-                        <span>${{ item.productPrice }}.00</span>
-                    </div>
-                    <div class="b-item-overlay">
-                        <button @click="add(item)">
-                            <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-basket3" fill="currentColor"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
-                                <path
-                                    d="M0 6.5A.5.5 0 0 1 .5 6h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zM.81 9c0 .035.004.07.011.105l1.201 5.604A1 1 0 0 0 3 15.5h10a1 1 0 0 0 .978-.79l1.2-5.605A.495.495 0 0 0 15.19 9h-1.011L13 14.5H3L1.821 9H.81z" />
-                            </svg>
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
 
+                <Catalog></Catalog>
 
-
-            </section>
             <div class="items__button container">
                 <button class="browse__product" name="BrowseP" id="">Browse All Product&nbsp;<i
                         class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
@@ -147,12 +83,12 @@
                     <div class="footerBanner__photo-txt"><span
                             style="color: #ffffff; font-size: 54px;">30%&nbsp;</span>OFFER
                         <span>for women</span></div>
-                    <img src="../src/assets/img/Banner.jpg" alt="footBanner">
+                    <img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/Banner.jpg" alt="footBanner">
                 </div>
                 <div class="footerBanner__menu">
                     <div class="footerBanner__menu__item">
                         <div class="left">
-                            <img src="../src/assets/img/Forma_1.svg" alt="car">
+                            <img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/Forma_1.svg" alt="car">
                         </div>
                         <div class="right">
                             <span>Free Delivery</span><br><br>Worldwide delivery on all. Authorit tively morph
@@ -162,7 +98,7 @@
                     </div>
                     <div class="footerBanner__menu__item">
                         <div class="left">
-                            <img src="../src/assets/img/Forma_2.svg" alt="car">
+                            <img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/Forma_2.svg" alt="car">
                         </div>
                         <div class="right">
                             <span>Sales & discounts</span><br><br>Worldwide delivery on all. Authorit tively morph
@@ -171,7 +107,7 @@
                     </div>
                     <div class="footerBanner__menu__item">
                         <div class="left">
-                            <img src="../src/assets/img/Forma_3.svg" alt="car">
+                            <img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/Forma_3.svg" alt="car">
                         </div>
                         <div class="right">
                             <span>Quality assurance</span><br><br>Worldwide delivery on all. Authorit tively morph
@@ -181,13 +117,13 @@
 
                 </div>
             </div>
-        </main>
+    </main>
 
-        <footer>
+    <footer>
             <div class="b-contacts">
                 <div class="container">
                     <div class="b-contacts__left">
-                        <div class="b-contacts__left-pic"><img src="../src/assets/img/Layer_40.png" alt="face"></div>
+                        <div class="b-contacts__left-pic"><img src="https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/Layer_40.png" alt="face"></div>
                         <div class="b-contacts__left__text">
                             <div class="b-contacts__left__text__paragraph">
                                 <p><b><i>“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
@@ -277,8 +213,19 @@
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
-</body>
+    </footer>
+  </div>
+</template>
 
-</html>
+<script>
+import Catalog from "./components/Catalog.vue"
+import Basket from "./components/Basket.vue"
+
+export default {
+    components: { Catalog, Basket },
+    }
+</script>
+
+<style>
+
+</style>
