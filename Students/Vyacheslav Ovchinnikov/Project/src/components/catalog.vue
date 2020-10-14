@@ -17,7 +17,8 @@ export default {
         return {
             items: [],
             // url: "https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json"
-            url: "/api/catalog"
+            url: "/api/catalog" // for Dev
+            // url: "/catalog" // for Bild
         }
     },
     methods: {
