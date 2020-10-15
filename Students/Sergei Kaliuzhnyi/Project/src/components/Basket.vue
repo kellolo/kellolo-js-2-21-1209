@@ -19,7 +19,7 @@
 
 <script>
 import Item from './Item.vue'
-
+import { get, post, put, del } from '../libraries/requests';
 // import Item from './item.vue'
 export default {
     components: { Item },
@@ -37,32 +37,47 @@ export default {
         }
     },
     methods: {
-        _get(url) {
-            return fetch(url).then(d => d.json())
-        },
         add(item) {
-            console.log(item)
             let find = this.items.find(el => el.productId == item.productId);
             if (find) {
-                find.amount++;
+                put(`/api/basket/${find.productId}`, { amount: 1 })
+                .then(status => {
+                    if (status.status) {
+                        find.amount++;
+                    }
+                })
             } else {
                 let newItem = Object.assign({}, item, { amount: 1 });
-                console.log(newItem)
-                this.items.push(newItem);
+                post('/api/basket', newItem)
+                .then(status => {
+                    if (status.status) {
+                        this.items.push(newItem);
+                    }
+                })
             }
         },
     
         remove(id) {
             let find = this.items.find(el => el.productId == id);
             if (find.amount > 1) {
-                find.amount--;
+                put(`/api/basket/${id}`, { amount: -1 })
+                .then(status => {
+                    if (status.status) {
+                        find.amount--;
+                    }
+                })
             } else {
-                this.items.splice(this.items.indexOf(find), 1);
+                del(`/api/basket/${id}`)
+                .then(status => {       /*{ status: true }*/
+                    if (status.status) {
+                        this.items.splice(this.items.indexOf(find), 1);
+                    }
+                })
             }
         }
     },
     mounted() {
-        this._get(this.url).then(basket => { this.items = basket.content });
+        get(this.url).then(basket => { this.items = basket.content });
     }
 }
 </script>
