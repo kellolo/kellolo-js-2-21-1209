@@ -78,11 +78,13 @@
   :hover {
     background: $colorIconBGHover;
   }
-  i {
+  & i {
     color: #c2c2c2;
     padding: 8px;
+    width: 17px;
+    height: 17px;
   }
-  i:hover {
+  & i:hover {
     color: #fff;
   }
 

@@ -8,7 +8,7 @@
   width: 165px;
   line-height: 51px;
   text-transform: uppercase;
-  background: url("../../../assets/imgs/logo.png") no-repeat;
+  background: url("https://github.com/Alaya95/static/blob/master/img/JS1_shop/logo.png?raw=true") no-repeat;
   background-blend-mode: overlay;
   font-size: 27px;
   padding-left: 72px;
@@ -252,7 +252,9 @@
     background: #f16d7f; }
   .social-link i {
     color: #c2c2c2;
-    padding: 8px; }
+    padding: 8px;
+    width: 17px;
+    height: 17px; }
   .social-link i:hover {
     color: #fff; }
 
@@ -445,7 +447,7 @@ body {
 .banner-content {
   margin: auto;
   height: inherit;
-  background: url("../../../assets/imgs/topHeaderBack1.png") no-repeat, #e8e8e8;
+  background: url("https://github.com/Alaya95/static/blob/master/img/JS1_shop/topHeaderBack1.png?raw=true") no-repeat, #e8e8e8;
   background-position: right;
   background-size: contain;
   display: flex;
@@ -621,7 +623,7 @@ body {
   .feature__sale {
     height: inherit;
     width: 767px;
-    background: url("../../../assets/imgs/Layer_38.png") no-repeat;
+    background: url("https://github.com/Alaya95/static/blob/master/img/JS1_shop/Layer_38.png?raw=true") no-repeat;
     position: relative; }
     .feature__sale-text {
       width: 301px;

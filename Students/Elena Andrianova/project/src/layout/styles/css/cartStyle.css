@@ -8,7 +8,7 @@
   width: 165px;
   line-height: 51px;
   text-transform: uppercase;
-  background: url("../../../assets/imgs/logo.png") no-repeat;
+  background: url("https://github.com/Alaya95/static/blob/master/img/JS1_shop/logo.png?raw=true") no-repeat;
   background-blend-mode: overlay;
   font-size: 27px;
   padding-left: 72px;
@@ -252,7 +252,9 @@
     background: #f16d7f; }
   .social-link i {
     color: #c2c2c2;
-    padding: 8px; }
+    padding: 8px;
+    width: 17px;
+    height: 17px; }
   .social-link i:hover {
     color: #fff; }
 
