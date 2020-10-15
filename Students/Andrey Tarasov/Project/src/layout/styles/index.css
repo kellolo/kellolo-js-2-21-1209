@@ -115,6 +115,7 @@ header .search button:last-child:hover {
 #basket {
   background: #fff;
   padding: 10px;
+  z-index: 10;
 }
 #basket-toggler {
   width: 50px;
@@ -131,6 +132,7 @@ header .search button:last-child:hover {
 .fa-times-circle {
   width: 30px;
   height: 30px;
+  background-image: url('../../assets/imgs/cart.png');
 }
 
 .fa-star {
@@ -140,9 +142,9 @@ header .search button:last-child:hover {
 
 .headerCart {
   position: relative; }
-  /*.headerCart:hover .headerCartWrap {
+  .headerCart:hover .headerCartWrap {
     display: block;
-    z-index: 2; } */
+    z-index: 2; }
   .headerCart .headerCartWrap {
     position: absolute;
     width: 260px;
@@ -229,7 +231,13 @@ header .search button:last-child:hover {
 }
 
 .feturedItems {
-  padding-top: 2rem; }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1170px;
+  margin: 0 auto 50px;
+  padding-top: 2rem;
+}
   @media (max-width: 450px) {
     .feturedItems {
       flex: 0 0 100%;
