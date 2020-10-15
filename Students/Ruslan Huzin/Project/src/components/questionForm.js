@@ -40,7 +40,6 @@ export default class QuestionForm {
         });
 
         this.submitButton.addEventListener('click', this._setValidations.bind(this));
-
     }
 
     _setValidations(ev) {
@@ -57,41 +56,4 @@ export default class QuestionForm {
             i+=1;
         })
     }
-
-
-    /*     _setValidations(ev) {
-            if (!this.nameRegExp.test(this.nameBox.value)) {
-                this.nameBox.placeholder = 'Имя содержит только латинские буквы';
-                this.nameBox.classList.add('input-error');
-                ev.preventDefault();
-            }
-            else{
-                this.nameBox.classList.remove('input-error');
-            }
-            if (!this.mailRegExp.test(this.mailBox.value)) {
-                this.mailBox.placeholder = 'Неправильный E-mail';
-                this.mailBox.classList.add('input-error');
-                ev.preventDefault();
-            }
-            else{
-                this.mailBox.classList.remove('input-error');
-            }
-            if (!this.phoneNumberRegExp.test(this.phoneBox.value)) {
-                this.phoneBox.placeholder = 'Телефон имеет вид +7(000)000-0000';
-                this.phoneBox.classList.add('input-error');
-                ev.preventDefault();
-            }
-            else{
-                this.phoneBox.classList.remove('input-error');
-            }
-
-            if (this.textBox.value.length == 0){
-                this.textBox.placeholder = 'Введите сообщение';
-                this.textBox.classList.add('input-error');
-                ev.preventDefault();
-            }
-            else{
-                this.textBox.classList.remove('input-error');
-            }
-        } */
 }
