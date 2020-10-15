@@ -1,7 +1,6 @@
 <template>
   <div>
 
-
     <tepmlate v-if="type == 'catalog'">
         <div class="item">
             <div class="itemImg">
@@ -25,21 +24,20 @@
         </div>
     </tepmlate>
 
-    <template v-if="type == 'basket'">
-        <div class="headerCartWrapIn" >
-          <div class="basketItemImg">
-            <img :src="item.productImg" alt="productPhoto" width="85" height="100">
-          </div>
-          <div class="basketInfoProduct">
-            <div class="BasketItemName">{{  item.productName  }}</div>
+    <template v-else-if="type == 'basket'">
+        <div class="headerCartWrapItem" >
+          <img :src="item.productImg" alt="productPhoto">
+
+          <div class="basketInfoItem">
+            <div class="basketInfoItemName">{{  item.productName  }}</div>
             <span>
                    <i class="fas fa-star goldenStar"></i>
                    <i class="fas fa-star goldenStar"></i>
                    <i class="fas fa-star goldenStar"></i>
                    <i class="fas fa-star goldenStar"></i>
                    <i class="fas fa-star-half-alt goldenStar"></i>
-                </span>
-            <div class="headerCartWrapPrice">{{  item.amount  }} <span>x</span> ${{  item.productPrice  }}</div>
+            </span>
+            <div class="basketInfoItemPrice">{{  item.amount  }} <span>x</span> ${{  item.productPrice  }}</div>
           </div>
           <button class="fas fa-times-circle"
                   name="remove"
@@ -48,6 +46,7 @@
           >
           </button>
         </div>
+        <hr>
     </template>
 
   </div>
