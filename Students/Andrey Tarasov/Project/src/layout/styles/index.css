@@ -108,6 +108,10 @@ header .search button:last-child:hover {
 
 /* Вставка стороннего кода */
 
+.invisible {
+  display: block !important;
+}
+
 #basket {
   background: #fff;
   padding: 10px;

@@ -6,6 +6,10 @@
 
 4. npm run build >>>>>>>> run script
 
+5. npm i vue
+
+6. npm i -D vue-loader vue-template-compiler
+
 additions:
     npm i bootstrap popper.js jquery
 
@@ -14,3 +18,9 @@ additions:
     npm i -D file-loader html-webpack-plugin copy-webpack-plugin
 
     npm i -D webpack-dev-server / npm run dev
+
+
+server:
+     npm init -y
+     npm i express nodemon
+     

@@ -1,9 +1,20 @@
-import { Catalogue } from './catalogue_2'
-import { Cart } from './cart'
+// import { Catalogue } from './catalogue_2'
+// import { Cart } from './cart'
+//
+//
+// export default () => {
+//     new Catalogue('/catalog.json');
+//     new Cart;
+// }
 
 
-export default () => {
-    new Catalogue('/catalog.json');
-    new Cart;
-}
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './layout/styles/styles.css'
 
+import Vue from 'vue'
+import Main from './Main.vue'
+
+new Vue({
+    render: h => h(Main)
+})
+    .$mount('#app');

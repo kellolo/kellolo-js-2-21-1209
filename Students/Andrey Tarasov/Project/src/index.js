@@ -1,3 +1,6 @@
-import app from './components';
+import Vue from 'vue'
+import Main from './Main.vue'
 
-app();
+new Vue({
+  render: h => h(Main)
+}).$mount('#app');
