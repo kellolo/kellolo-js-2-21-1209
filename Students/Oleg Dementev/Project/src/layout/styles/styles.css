@@ -275,6 +275,7 @@
     position: absolute;
     width: 260px;
     left: -40px;
+    z-index: 10;
  }
     @media (max-width: 650px) {
       .headerCart .headerCartWrap {
@@ -1455,7 +1456,7 @@ details[open] summary .fa-caret-up {
   text-transform: uppercase; }
 
 body {
-  background-color: gray;
+  /*background-color: gray;*/
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif; }

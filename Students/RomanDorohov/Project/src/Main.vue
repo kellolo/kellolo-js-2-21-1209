@@ -35,7 +35,7 @@
                     <div class="headerCart pr-4" >
                         <button id="basket-toggler" @click="showBasket = !showBasket"></button>
 
-                        <Basket v-show="showBasket" ref="basket"/>
+                        <Basket v-show="showBasket" ref="basket" />
                     </div>
 
 

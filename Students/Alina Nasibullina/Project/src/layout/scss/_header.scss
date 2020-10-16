@@ -71,6 +71,18 @@
     }
 }
 
+.nav-list {
+    ul {
+        padding-left: 0px;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
 .search {
     height: 38px;
     display: flex;
