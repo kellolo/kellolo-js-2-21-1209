@@ -12,22 +12,22 @@
 </template>
 
 <script>
-import Item from './Item.vue'
+import Item from './item.vue'
+import { get } from '../libraries/requests'
 export default {
-  components: {  Item  },
+  components: { Item },
   data() {
     return {
       items: [],
-      url: '/api/catalog.json'
+      url: '/api/catalog', //for Dev
+      // url: '/catalog' //for Build
     }
   },
-  methods: {
-    get(url) {
-      return fetch(url).then(d => d.json())
-    },
-  },
   mounted() {
-    this.get(this.url).then(items => {this.items = items;})
+    get(this.url).then(items => { this.items = items });
+    console.log(this)
+    console.log(this.$parent)
+    console.log(this.$root)
   }
 }
 </script>

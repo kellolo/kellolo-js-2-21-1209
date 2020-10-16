@@ -1,0 +1,224 @@
+@import "variables";
+.header {
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 165px;
+  line-height: 51px;
+  text-transform: uppercase;
+  background: url("https://github.com/Alaya95/static/blob/master/img/JS1_shop/logo.png?raw=true") no-repeat;
+  background-blend-mode: overlay;
+  font-size: 27px;
+  padding-left: 72px;
+  text-decoration: none;
+  color: #222222;
+  margin-right: 20px;
+  span {
+    font-weight: 700;
+    color: $colorFont;
+  }
+}
+
+.search {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+  font-size: 14px;
+  .search__browse {
+    padding: 14px;
+    background-color: #f6f6f6;
+    line-height: 38px;
+    color: #7c7c7c;
+    outline: none;
+    border: none;
+    position: relative;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .browseDropDown{
+    position: absolute;
+    z-index: 1;
+    display: none;
+    background: #ffffff;
+    outline: 1px solid $colorHeaderCartOutline;
+    padding: 0 10px 10px;
+    &Block {
+
+      display: block;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: $colorLinkHeader;
+        padding: 2px;
+        &:hover {
+          color: $colorLinkHeaderHover;
+        }
+      }
+    }
+  }
+    & input {
+        height: inherit;
+        border: none;
+        overflow: hidden;
+        padding: 14px 16px;
+        border-left: 1px solid #e6e6e6;
+        border-right: 1px solid #e6e6e6;
+        outline: none;
+    }
+    & button:last-child {
+      border: none;
+      height: inherit;
+      background: none;
+      padding: 12px;
+      outline: none;
+      color: #a4a4a4;
+    }
+}
+
+.header__account-bar {
+  width: 130px;
+  line-height: 32px;
+  background-color: $colorButtonBG;
+  padding-left: 19px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  &:hover {
+    box-shadow: 0 0 10px $colorButtonBG;
+  }
+}
+.headerLine {
+  border-bottom: 1px solid #ececec;
+}
+.headerCart {
+  position: relative;
+  margin-left: auto;
+  .basketAllItemAmount{
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    width: 19px;
+    height: 19px;
+    background-color: #f16d7f;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    left: 30px;
+  }
+  .header__cart {
+    margin-left: auto;
+    margin-right: 26px;
+    outline: none;
+    border: none;
+    background: none;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &Wrap {
+    position: absolute;
+    width: 265px;
+    left: -60px;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid $colorHeaderCartOutline;
+    border-radius: 5px;
+    margin-top: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &Item {
+      width: 235px;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      & img {
+        width: 72px;
+        height: 85px;
+        background-color: #ececec;
+        margin-right: 10px;
+      }
+      .basketInfoItem{
+        font-size: 12px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        &Name{
+          font-weight: 700;
+        }
+        .goldenStar {
+          color: $colorStarProduct;
+          font-size: 12px;
+          line-height: 1.2;
+          margin: 10px 0;
+        }
+        &Price{
+          font-weight: 400;
+          color: $colorBasketPrice;
+
+        }
+      }
+      & button{
+        outline: none;
+        border: none;
+        background: none;
+        width: 20px;
+        height: 20px;
+        &:hover{
+          cursor: pointer;
+          color: $colorBasketBtnTextHover;
+        }
+      }
+    }
+    &TotalPrice {
+      width: 235px;
+      display: flex;
+      flex-direction: row;
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 700;
+      text-transform: uppercase;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+    .basketCartBtn {
+      width: 235px;
+      height: 50px;
+      outline: none;
+      border: 1px solid $colorBasketBtnBorder;
+      background: none;
+      margin: 5px 0;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 700;
+      text-transform: uppercase;
+      &:hover{
+        border: 1px solid $colorBasketBtnBorderHover;
+        color: $colorBasketBtnTextHover;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
