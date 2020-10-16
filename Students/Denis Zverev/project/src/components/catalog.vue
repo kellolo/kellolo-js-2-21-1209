@@ -5,6 +5,7 @@
                 v-for="item of items" 
                 :key="item.productId"
                 :item="item"
+                type="catalog"
             />
       </div>
   </div>
@@ -12,21 +13,18 @@
 
 <script>
 import Item from './item.vue'
+import { get } from '../libraries/requests'
 export default {
     components: { Item },
     data() {
         return {
             items: [],
-            url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json'
+            url: '/api/catalog', //for Dev
+            // url: '/catalog' //for Build
         }
     },
-    methods: {
-        _get(url) {
-            return fetch(url).then(d => d.json())
-        },
-    },
     mounted() {
-        this._get(this.url).then(items => { this.items = items });
+        get(this.url).then(items => { this.items = items });
         console.log(this)
         console.log(this.$parent)
         console.log(this.$root)
