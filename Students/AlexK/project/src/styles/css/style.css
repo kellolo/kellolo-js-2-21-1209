@@ -32,7 +32,7 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .topBanner .container {
-    background-image: url("../../assets/img/topHeaderBack.png");
+    background-image: url("https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/topHeaderBack.png");
     background-repeat: no-repeat;
     background-size: 570px;
     background-position-x: right;
@@ -205,7 +205,7 @@ input::-webkit-calendar-picker-indicator {
 
 /**************Стили для контактов***************/
 .b-contacts {
-    background-image: url("../../assets/img/2-layers.png");
+    background-image: url("https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/2-layers.png");
     background-blend-mode: overlay;
     background-size: cover;
     height: 438px;
@@ -408,7 +408,7 @@ input::-webkit-calendar-picker-indicator {
 
 /****************************Стили для input и button***************/
 .myarrow:after {
-    content: url("../../assets/img/basket/caret_s.png");
+    content: url("https://raw.githubusercontent.com/kulyamzin/GeekBrain/master/site/img/basket/caret_s.png");
     margin-left: -20px;
     padding: .1em;
     pointer-events: none;

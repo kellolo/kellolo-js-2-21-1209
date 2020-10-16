@@ -485,6 +485,18 @@ button {
   color: #636363;
 }
 
+.nav-list ul {
+  padding-left: 0px;
+}
+
+.nav-list li {
+  list-style: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+}
+
 #Browse {
   display: none;
 }
