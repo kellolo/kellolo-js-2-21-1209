@@ -6,7 +6,7 @@
       <form method="get" class="search">
         <button name="Browse">
           Browse
-          <img src="./assets/imgs/icons/fa-caret-down.png" alt="#" />
+          <img src="../assets/imgs/icons/fa-caret-down.png" alt="#" />
         </button>
         <input type="text" name="search" placeholder="Search for Item..." />
         <button></button>
@@ -77,7 +77,7 @@
 
       <button name="accountBar" class="header__account-bar">
         My Account
-        <img src="./assets/imgs/icons/fa-caret-down-white.png" alt="#" />
+        <img src="../assets/imgs/icons/fa-caret-down-white.png" alt="#" />
       </button>
     </header>
 
@@ -105,7 +105,7 @@
     <div class="selecting-category">
       <div class="category-one">
         <a href="#"
-          ><img src="./assets/imgs/offer1.jpg" alt="Для мужчин"
+          ><img src="../assets/imgs/offer1.jpg" alt="Для мужчин"
         /></a>
 
         <div>
@@ -116,7 +116,7 @@
 
       <div class="category-two">
         <a href="#"
-          ><img src="./assets/imgs/offer2.jpg" alt="Аксессуары"
+          ><img src="../assets/imgs/offer2.jpg" alt="Аксессуары"
         /></a>
 
         <div>
@@ -127,7 +127,7 @@
 
       <div class="category-three">
         <a href="#"
-          ><img src="./assets/imgs/offer3.jpg" alt="Для женщин"
+          ><img src="../assets/imgs/offer3.jpg" alt="Для женщин"
         /></a>
 
         <div>
@@ -138,7 +138,7 @@
 
       <div class="category-four">
         <a href="#"
-          ><img src="./assets/imgs/offer4.jpg" alt="Для детей"
+          ><img src="../assets/imgs/offer4.jpg" alt="Для детей"
         /></a>
 
         <div>
@@ -232,7 +232,7 @@
 
         <div class="mailing-container">
           <div class="mailing-container__description">
-            <img src="./assets/imgs/face-girl.png" alt="Лицо девушки" />
+            <img src="../assets/imgs/face-girl.png" alt="Лицо девушки" />
             <div>
               <q
                 >Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
@@ -317,17 +317,17 @@
           </div>
           <div class="container-copyright__icons">
             <a href="#"
-              ><img src="./assets/imgs/icons/f.png" alt="Фэйсбук"
+              ><img src="../assets/imgs/icons/f.png" alt="Фэйсбук"
             /></a>
             <a href="#"
-              ><img src="./assets/imgs/icons/twitter.png" alt="Твиттер"
+              ><img src="../assets/imgs/icons/twitter.png" alt="Твиттер"
             /></a>
             <a href="#"
-              ><img src="./assets/imgs/icons/in.png" alt="#"
+              ><img src="../assets/imgs/icons/in.png" alt="#"
             /></a>
-            <a href="#"><img src="./assets/imgs/icons/p.png" alt="#" /></a>
+            <a href="#"><img src="../assets/imgs/icons/P.png" alt="#" /></a>
             <a href="#"
-              ><img src="./assets/imgs/icons/g+.png" alt="#"
+              ><img src="../assets/imgs/icons/G+.png" alt="#"
             /></a>
           </div>
         </div>
@@ -337,8 +337,8 @@
 </template>
 
 <script>
-import Catalog from './components/catalog.vue'
-import Basket from './components/basket.vue'
+import Catalog from '../components/catalog.vue'
+import Basket from '../components/basket.vue'
 
 export default {
     // components: { 'catalog-component': Catalog },

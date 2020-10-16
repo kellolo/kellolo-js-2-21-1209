@@ -32,8 +32,8 @@ export default {
     data() {
         return {
             items: [],
-            url: '/api/basket' //dev
-            // url: '/basket' //build
+            // url: '/api/basket' //dev
+            url: '/basket' //build
         }
     },
     methods: {
