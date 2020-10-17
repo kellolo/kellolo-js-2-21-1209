@@ -14,10 +14,18 @@
 
       <!-- Корзина -->
 
-      <div class="headerCart pr-4">
+      <div class="headerCart pr-4" >
         <button id="basket-toggler" @click="showBasket = !showBasket"></button>
 
-        <!-- <Basket v-show="showBasket" ref="basket" /> -->
+        <Basket v-show="showBasket" ref="basket"/>
+      </div>
+
+      <!-- <Basket v-show="showBasket" ref="basket" /> -->
+
+      <!-- <div class="headerCart pr-4">
+        <button id="basket-toggler" @click="showBasket = !showBasket"></button>
+
+        
 
         <div class="headerCartWrap" id="basket" v-show="showBasket">
           <div class="headerCartWrapBlock"></div>
@@ -64,7 +72,7 @@
           </div>
         </div>
       </div>
-
+ -->
       <!--  -->
 
       <button name="accountBar" class="header__account-bar">
@@ -97,7 +105,7 @@
     <div class="selecting-category">
       <div class="category-one">
         <a href="#"
-          ><img src="../src/assets/imgs/offer1.jpg" alt="Для мужчин"
+          ><img src="./assets/imgs/offer1.jpg" alt="Для мужчин"
         /></a>
 
         <div>
@@ -108,7 +116,7 @@
 
       <div class="category-two">
         <a href="#"
-          ><img src="../src/assets/imgs/offer2.jpg" alt="Аксессуары"
+          ><img src="./assets/imgs/offer2.jpg" alt="Аксессуары"
         /></a>
 
         <div>
@@ -119,7 +127,7 @@
 
       <div class="category-three">
         <a href="#"
-          ><img src="../src/assets/imgs/offer3.jpg" alt="Для женщин"
+          ><img src="./assets/imgs/offer3.jpg" alt="Для женщин"
         /></a>
 
         <div>
@@ -130,7 +138,7 @@
 
       <div class="category-four">
         <a href="#"
-          ><img src="../src/assets/imgs/offer4.jpg" alt="Для детей"
+          ><img src="./assets/imgs/offer4.jpg" alt="Для детей"
         /></a>
 
         <div>
@@ -146,8 +154,8 @@
     </div>
 
     <!-- Встраиваемый каталог из базы данных -->
-    <!-- <Catalog /> -->
-    <div class="row" id="catalog">
+    <catalog />
+    <!-- <div class="row" id="catalog">
       
       <div
         class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 col-lg-3 feturedItems"
@@ -173,7 +181,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!--  -->
 
@@ -329,53 +337,25 @@
 </template>
 
 <script>
-// import Catalog from './components/catalog.vue'
-// import Basket from './components/basket.vue'
-  export default {
+import Catalog from './components/catalog.vue'
+import Basket from './components/basket.vue'
+
+export default {
+    // components: { 'catalog-component': Catalog },
     components: { Catalog, Basket },
     data() {
-      return {
-			  catalogItems: [],
-			  basketItems: [],
-			  showBasket: false,
-			  showCatalog: true,
-			  catalogUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json',
-			  basketUrl: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json',
-			  items: [],
-        basketItems: []
-      }
-		},
-		methods: {
-			get(url) {
-				return fetch(url).then(d => d.json())
-			},
-
-			add(item) {
-				let find = this.basketItems.find(el => el.productId == item.productId);
-				if (find) {
-					find.amount++;
-				} else {
-          let newItem = Object.assign( {}, item, { amount: 1 });
-					this.basketItems.push(newItem);
-				}
-			},
-
-			remove(id) {
-				let find = this.basketItems.find(el => el.productId == id);
-				if (find.amount > 1) {
-					find.amount--;
-				} else {
-					this.basketItems.splice(this.basketItems.indexOf(find), 1);
-				}
-			}
-		},
-		mounted() {
-			this.get(this.catalogUrl).then(items => {
-			this.catalogItems = items
-			});
-			this.get(this.basketUrl).then(basket => {
-				this.basketItems = basket.content
-			})
-		}
-  }
+        return {
+            showBasket: false,
+        }
+    },
+    methods: {
+        get(url) {
+            return fetch(url).then(d => d.json())
+        },  
+    },
+}
 </script>
+
+<style>
+
+</style>
