@@ -1,18 +1,24 @@
 <template>
-  <div id="catalog" class="product-box center">
-    <Item v-for="item of items" :key="item.productId" :item="item" />
-  </div>
+    <div id="catalog" class="product-box center">
+        <Item 
+            v-for="item of items" 
+            :key="item.productId" 
+            :item="item"
+            type="catalog"
+        />
+    </div>
 </template>
 
 <script>
-import Item from "item.vue";
+import Item from "./item.vue";
 export default {
     components: { Item },
     data() {
         return {
             items: [],
-            url:
-            "https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json"
+            // url: "https://raw.githubusercontent.com/kellolo/static/master/JSON/catalog.json"
+            url: "/api/catalog" // for Dev
+            // url: "/catalog" // for Bild
         }
     },
     methods: {
