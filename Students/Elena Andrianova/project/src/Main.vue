@@ -1,34 +1,62 @@
 <template>
   <div>
     <div class="header container">
-      <a href="#" class="logo">Bran<span>d</span></a>
 
-      <form method="get" class="search">
-        <button class="search__browse" name="browse" id="">Browse <i class="fas fa-caret-down"></i></button>
-        <input type="text" name="search" placeholder="Search for item...">
-        <button><i class="fas fa-search"></i></button>
-      </form>
+        <a href="#" class="logo">Bran<span>d</span></a>
 
-      <div class="headerCart" >
-        <button id="basket-toggler" class="header__cart"><img src="https://github.com/Alaya95/static/blob/master/img/JS1_shop/cart.png?raw=true" alt="cart" class="header__cart"  @click="showBasket = !showBasket"></button>
+        <form method="get" class="search">
+          <div class="searchBrowseBlock">
+            <button class="search__browse" name="browse" id="">Browse <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="browseDropDown">
+              <div class="browseDropDownBlock">
+                <p>Women</p>
+                <hr>
+                <a href="#">Dresses</a>
+                <a href="#">Tops</a>
+                <a href="#">Sweaters/Knits</a>
+                <a href="#">Jackets/Coats</a>
+                <a href="#">Blazers</a>
+                <a href="#">Denim</a>
+                <a href="#">Leggings/Pants</a>
+                <a href="#">Skirts/Shorts</a>
+                <a href="#">Accessories</a>
+              </div>
+              <div class="browseDropDownBlock">
+                <p>Men</p>
+                <hr>
+                <a href="#">Tees/Tank tops</a>
+                <a href="#">Shirts/Polo</a>
+                <a href="#">Sweaters</a>
+                <a href="#">Sweatshirts/Hoodies</a>
+                <a href="#">Blazers</a>
+                <a href="#">Jackets/Vests</a>
+              </div>
+            </div>
+          </div>
+          <label for="searchInput"></label>
+          <input id="searchInput" type="text" name="search" placeholder="Search for item...">
+          <button><i class="fas fa-search"></i></button>
+        </form>
 
-        <basket v-show="showBasket" ref="basket" />
+        <div class="headerCart" >
+          <div class="basketAllItemAmount"></div>
+          <button id="basket-toggler" class="header__cart">
+            <img src="https://github.com/Alaya95/static/blob/master/img/JS1_shop/cart.png?raw=true"        alt="cart"
+                 class="header__cart"
+                 @click="showBasket = !showBasket">
+          </button>
+          <Basket v-show="showBasket" ref="basket" />
 
+        </div>
 
-      </div>
+        <button name="accountBar" class="header__account-bar">My Account <i class="fas fa-caret-down"></i></button>
 
-      <button name="accountBar" class="header__account-bar">My Account <i class="fas fa-caret-down"></i></button>
 
     </div>
     <div class="headerLine"></div>
     <div class="topNav container">
-      <a href="#">Home</a>
-      <a href="#">Man</a>
-      <a href="#">Women</a>
-      <a href="#">Kids</a>
-      <a href="#">Accoseriese</a>
-      <a href="#">Featured</a>
-      <a href="#">Hot Deals</a>
+      <Navigation />
     </div>
     <div class="topBanner">
       <div class="banner-content container">
@@ -92,7 +120,7 @@
       <div class="feature__box">
 
         <div class="feature__box-cont">
-          <img src="./assets/imgs/delivery.png" alt="delivery">
+          <img src="https://github.com/Alaya95/static/blob/master/img/JS1_shop/delivery.png?raw=true" alt="delivery">
           <div class="feature__box-text">
             <p>Free Delivery</p>
             <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
@@ -100,7 +128,7 @@
         </div>
 
         <div class="feature__box-cont">
-          <img src="./assets/imgs/sales.png" alt="sale">
+          <img src="https://github.com/Alaya95/static/blob/master/img/JS1_shop/sales.png?raw=true" alt="sale">
           <div class="feature__box-text">
             <p>Sales & discounts</p>
             <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
@@ -108,7 +136,7 @@
         </div>
 
         <div class="feature__box-cont">
-          <img src="./assets/imgs/assurance.png" alt="accurance">
+          <img src="https://github.com/Alaya95/static/blob/master/img/JS1_shop/assurance.png?raw=true" alt="accurance">
           <div class="feature__box-text">
             <p>Quality assurance</p>
             <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
@@ -120,7 +148,7 @@
     <div class="subscribeBG">
       <div class="subscribe container">
         <div class="subscribe__block">
-          <img src="./assets/imgs/Layer_40.png" alt="photo">
+          <img src="https://github.com/Alaya95/static/blob/master/img/JS1_shop/Layer_40.png?raw=true" alt="photo">
           <div class="subscribe__block-text">
             <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
             <p>Bin Burhan <br><span>Dhaka, Bd</span></p>
@@ -132,8 +160,9 @@
             <h3>Subscribe</h3>
             <p>For our new letter and promotion</p>
           </div>
-          <form action="subscribe-form"  class="subscribeForm">
-            <input type="email" name="mail" placeholder="Enter Your Email">
+          <form action="#"  class="subscribeForm">
+            <label for="subscribeEmailInput"></label>
+            <input id="subscribeEmailInput" name="mail" placeholder="Enter Your Email">
             <button>Subscribe</button>
           </form>
 
@@ -196,19 +225,19 @@
 
 <script>
 import Catalog from "./components/Catalog.vue";
+import Navigation from  "./components/Navigation.vue"
 import Basket from "./components/Basket.vue";
 
 export default {
-  components: { Catalog, Basket },
+  components: {Basket, Catalog, Navigation },
 
   data(){
     return {
-      showBasket: false, //скрытие и показ корзины)
+      showBasket: false
     }
   },
-
   methods: {
-    _get(url) {
+    get(url) {
       return fetch(url).then(d => d.json())
     },
   },
