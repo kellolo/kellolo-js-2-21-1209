@@ -6,6 +6,13 @@ import './layout/styles/style_feedback.css';
 import './layout/styles/style_categories.css';
 import './layout/styles/style_breadcrumbs.css'; 
 
-import app from './components';
 
-app();
+
+import Vue from 'vue'
+import Main from './Main.vue'
+
+new Vue({
+    render: h => h(Main)
+})
+.$mount('#app');
+

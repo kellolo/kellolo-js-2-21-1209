@@ -40,7 +40,6 @@ export default class QuestionForm {
         });
 
         this.submitButton.addEventListener('click', this._setValidations.bind(this));
-
     }
 
     _setValidations(ev) {
