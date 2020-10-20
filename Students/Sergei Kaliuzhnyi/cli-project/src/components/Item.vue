@@ -9,7 +9,7 @@
                 <h3 class="featured__items_block-name">{{ item.productName }}</h3>
                 <p class="featured__items_block-price">{{ item.productPrice }}</p>
             </a>
-            <button @click="$parent.$parent.$refs.basket.add(item)" class="featured__add" name="add">
+            <button @click="add(item)" class="featured__add" name="add">
                 <i class="fas fa-times fa-shopping-cart"></i> Add to Cart
             </button>
         </div>
@@ -28,7 +28,7 @@
                     <p class="header__dropprice">{{ item.amount }} Х {{ item.productPrice }}</p>
                 </a>
             </div>
-            <button @click="$parent.$parent.$refs.basket.remove(item.productId)" class="header__cart-drop-button fas fa-times-circle"></button>
+            <button @click="remove(item.productId)" class="header__cart-drop-button fas fa-times-circle"></button>
         </div>
     </template>
 </div>
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
     props: {
         item: {
@@ -55,6 +56,7 @@ export default {
             type: String
         }
     },
+    methods: mapActions(['add', 'remove'])
 }
 </script>
 

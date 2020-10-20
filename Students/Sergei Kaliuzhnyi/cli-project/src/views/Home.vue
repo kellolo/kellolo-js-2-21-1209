@@ -1,7 +1,5 @@
 <template>
   <div>
-    
-    <Header />
 
     <!-- <Promo />
 
@@ -30,7 +28,6 @@
 <script>
 import Catalog from '@/components/Catalog.vue';
 import Basket from '@/components/Basket.vue';
-import Header from '@/components/Header.vue';
 import Promo from '@/components/Promo.vue';
 import Offers from '@/components/Offers.vue';
 import Offer from '@/components/Offer.vue';
@@ -38,7 +35,7 @@ import Footer from '@/components/Footer.vue';
 
 export default {
     // components: { 'catalog-component': Catalog },
-    components: { Catalog, Basket, Promo, Offer, Footer, Header, Offers },
+    components: { Catalog, Basket, Promo, Offer, Footer, Offers },
     data() {
         return {
             showBasket: false,
