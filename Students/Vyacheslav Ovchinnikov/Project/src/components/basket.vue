@@ -17,13 +17,12 @@
 </template>
 
 <script>
-import Item from './item.vue'
+import Item from './Item.vue'
 export default {
     components: { Item },
     data() {
         return {
             items: [],
-            // url: 'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json'
             url: "/api/basket"
         }
     },
