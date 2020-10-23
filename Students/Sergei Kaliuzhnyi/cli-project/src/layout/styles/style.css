@@ -2780,6 +2780,7 @@ a {
   display: flex;
   width: 50%;
   margin-left: 35px;
+  border: none;
 }
 
 .forms__legend {
@@ -2792,6 +2793,7 @@ a {
   outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  border: none;
 }
 
 .forms__legend:hover {
@@ -2943,6 +2945,10 @@ a {
   line-height: 20px;
   font-weight: 600;
   margin-bottom: 30px;
+}
+
+.forms__registed {
+  border: none;
 }
 
 .forms__redstar {

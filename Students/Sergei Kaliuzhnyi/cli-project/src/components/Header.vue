@@ -17,8 +17,8 @@
 
                 <Basket v-show="showBasket" ref="basket"/>
                 
-                <a href="#" class="button">My Account <i class="fa fa-sort-desc button__icon"
-                        aria-hidden="true"></i></a>
+                <router-link to="/checkout"> <a href="#" class="button">My Account <i class="fa fa-sort-desc button__icon"
+                        aria-hidden="true"></i></a></router-link>
             </div>
         </header>
         <header class="nav">

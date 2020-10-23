@@ -6,14 +6,21 @@
       <router-link to="/about">About</router-link> -->
     </div>
     <router-view/>
+    <div>
+      <Offer />
+
+    <Footer />
+
+    </div>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
-
+import Offer from '@/components/Offer.vue';
+import Footer from '@/components/Footer.vue';
 export default {
-    components: { Header },
+    components: { Header, Offer, Footer },
 }
 </script>
 

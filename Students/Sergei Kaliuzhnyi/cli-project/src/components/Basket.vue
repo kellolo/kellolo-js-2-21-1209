@@ -11,7 +11,7 @@
                 <p>total</p>
                 <p>{{ }}</p>
             </div>
-            <a href="checkout.html" class="header__dropbutton">Checkout</a>
+            <router-link to="/checkout"> <a href="checkout.html" class="header__dropbutton">Checkout</a></router-link>
             <a href="shopping_cart.html" class="header__dropbutton">Go to cart</a>                      
         </div>
     </div>
@@ -19,7 +19,7 @@
 
 <script>
 import Item from './Item.vue'
-import { get, post, put, del } from '../libraries/requests';
+// import { get, post, put, del } from '../libraries/requests';
 import { mapGetters, mapActions } from 'vuex'
 
 // import Item from './item.vue'
@@ -39,7 +39,7 @@ export default {
     //     //     return result;
     //     // }
     // },
-    methods: mapActions(['getItems']),
+    methods: mapActions(['getBasketItems']),
     // {
         // add(item) {
         //     let find = this.items.find(el => el.productId == item.productId);
@@ -82,7 +82,7 @@ export default {
     // },
     async mounted() {
         // get(this.url).then(basket => { this.items = basket.content });
-        this.getItems()
+        this.getBasketItems()
     }
 }
 </script>

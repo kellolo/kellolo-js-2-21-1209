@@ -1,29 +1,29 @@
 import { get, post, put, del } from '../../libraries/requests';
 export default {
     state: {
-        items:[],
-        url: '/api/basket'
+        basketItems:[],
+        basketUrl: '/api/basket'
     },
     mutations: {
-        updateItems(state, items){
-            state.items = items;
+        updateBasketItems(state, items){
+            state.basketItems = items;
         },
         addNewItem(state, newItem){
-            state.items.push(newItem);
+            state.basketItems.push(newItem);
         },
         removeItem(state, find){
-            state.items.splice(state.items.indexOf(find), 1)
+            state.basketItems.splice(state.basketItems.indexOf(find), 1)
         }
     },
     actions: {
-        async getItems(ctx){
-            get(ctx.state.url).then(basket => { 
+        async getBasketItems(ctx){
+            get(ctx.state.basketUrl).then(basket => { 
                 let items = basket.content;
-                ctx.commit('updateItems', items);
+                ctx.commit('updateBasketItems', items);
             });
         },
         add(ctx, item){
-            let find = ctx.state.items.find(el => el.productId == item.productId);
+            let find = ctx.state.basketItems.find(el => el.productId == item.productId);
             if (find) {
                 put(`/api/basket/${find.productId}`, { amount: 1 })
                 .then(status => {
@@ -42,7 +42,7 @@ export default {
             }
         },
         remove(ctx, id){
-            let find = ctx.state.items.find(el => el.productId == id);
+            let find = ctx.state.basketItems.find(el => el.productId == id);
             if (find.amount > 1) {
                 put(`/api/basket/${id}`, { amount: -1 })
                 .then(status => {
@@ -62,7 +62,7 @@ export default {
     },
     getters:{
         basketItems(state){
-            return state.items
+            return state.basketItems
         }
     }
 }

@@ -18,11 +18,7 @@
       </div>
     </section>
 
-    <Offer />
-
-    <Footer />
-
-    </div>
+  </div>
 </template>
 
 <script>
