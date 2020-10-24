@@ -1,23 +1,22 @@
 <template>
     <footer class="footer center">
         <aside class="footer__brand">
-            <a class="logo footer__logo" href="#"
-            ><img
-                class="logo__img"
-                src="https://raw.githubusercontent.com/Veledar/STATIK/master/imgs/logo.png"
-                alt="logo"
-            />BRAN<span>D</span></a
-            >
+            <a class="logo footer__logo" href="#">
+                <img class="logo__img"
+                     src="https://raw.githubusercontent.com/Veledar/STATIK/master/imgs/logo.png"
+                     alt="logo"
+                />BRAN<span>D</span>
+            </a>
             <p class="footer__brand__text1">
-            Objectively transition extensive data rather than cross functional
-            solutions. Monotonectally syndicate multidisciplinary materials before
-            go forward benefits. Intrinsicly syndicate an expanded array of
-            processes and cross-unit partnerships.
+                Objectively transition extensive data rather than cross functional
+                solutions. Monotonectally syndicate multidisciplinary materials before
+                go forward benefits. Intrinsicly syndicate an expanded array of
+                processes and cross-unit partnerships.
             </p>
             <p class="footer__brand__text2">
-            Efficiently plagiarize 24/365 action items and focused infomediaries.
-            Distinctively seize superior initiatives for wireless technologies.
-            Dynamically optimize.
+                Efficiently plagiarize 24/365 action items and focused infomediaries.
+                Distinctively seize superior initiatives for wireless technologies.
+                Dynamically optimize.
             </p>
         </aside>
         <nav class="footer__column">

@@ -42,11 +42,12 @@
                   <li><a href="#" class="drop__a">Sweaters/Knits</a></li>
                   <li><a href="#" class="drop__a">Jackets/Coats</a></li>
                 </ul>
-                <a href=""
-                  ><img
+                <a href="#">
+                  <img
                     src="https://raw.githubusercontent.com/Veledar/STATIK/master/imgs/navDrop.jpg"
                     alt="nav img"
-                /></a>
+                  />
+                </a>
               </div>
             </div>
           </li>
