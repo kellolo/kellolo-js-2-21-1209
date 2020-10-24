@@ -17,7 +17,7 @@ export default {
     return {
       items: [],
       url: "/api/catalog", // for Dev
-      // url: "/catalog" // for Bild
+      //url: "/catalog" // for Bild
     };
   },
   methods: {
