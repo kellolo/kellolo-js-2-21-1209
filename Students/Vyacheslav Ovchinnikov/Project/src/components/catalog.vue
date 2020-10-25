@@ -11,6 +11,8 @@
 
 <script>
 import Item from "./Item.vue";
+import { get } from '../libraries/requests'
+
 export default {
   components: { Item },
   data() {
@@ -20,13 +22,8 @@ export default {
       //url: "/catalog" // for Bild
     };
   },
-  methods: {
-    _get(url) {
-      return fetch(url).then((d) => d.json());
-    },
-  },
   mounted() {
-    this._get(this.url).then((items) => {
+    get(this.url).then((items) => {
       this.items = items;
     });
   },

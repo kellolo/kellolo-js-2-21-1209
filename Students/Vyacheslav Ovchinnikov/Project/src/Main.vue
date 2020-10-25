@@ -110,9 +110,9 @@
                     </div>
                     <figcaption class="subscribeReviewUnitRight">
                         <blockquote>
-                          “Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
+                          &#8220;Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
                           pulvinar purus condimentum a. Aliquam condimentum mattis neque
-                          sed pretium”
+                          sed pretium&#8221;
                         </blockquote>
                         <div class="reviewName">Bin Burhan</div>
                         <div class="reviewFrom">Dhaka, Bd</div>
