@@ -69,9 +69,7 @@ export default {
     },
   },
   mounted() {
-    get(this.url).then((basket) => {
-      this.items = basket.content;
-    });
+    get(this.url).then(basket => { this.items = basket.content });
   },
 };
 </script>

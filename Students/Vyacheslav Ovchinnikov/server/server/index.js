@@ -15,4 +15,18 @@ server.get('/basket', (req, res) => {
     res.json(data);
 });
 
+server.post('/basket', (req, res) => {
+    let data = JSON.parse(fs.readFileSync('./server/db/basket.json', 'utf-8'));
+
+    data.content.push(req.body)
+
+    fs.writeFile('./server/db/basket.json', JSON.stringify(data, null, ' '), err => {
+        if (!err) {
+            res.json({ static: true})
+        } else {
+            res.json({ static: false})
+        }
+    })
+});
+
 server.listen(3000);
