@@ -52,14 +52,14 @@ export default {
     remove(id) {
       let find = this.items.find((el) => el.productId == id);
       if (find.amount > 1) {
-        put(`/api/basket/${find.productId}`, { amount: -1 }).then((status) => {
+        put(`/api/basket/${find.productId}`, { amount: -1 }).then(status => {
           /*{ status: true }*/
           if (status.status) {
             find.amount--;
           }
         });
       } else {
-        del(`/api/basket/${find.productId}`).then((status) => {
+        del(`/api/basket/${find.productId}`).then(status => {
           /*{ status: true }*/
           if (status.status) {
             this.items.splice(this.items.indexOf(find), 1);
