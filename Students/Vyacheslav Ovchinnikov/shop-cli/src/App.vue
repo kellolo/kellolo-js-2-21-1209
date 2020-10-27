@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="top">
-      <Header />
+      <Header ref="header" />
       <div class="line-horizon"></div>
       <div id="nav">
         <router-link to="/">Home</router-link> |
@@ -12,7 +12,7 @@
         <router-link to="/single-page">Single Page</router-link>
       </div>
       <Nav />
-      <router-view/>
+      <router-view />
     </div>
     <Subscribe />
     <Footer />
@@ -32,14 +32,14 @@ export default {
   data() {
     return {
       showBasket: false,
-    }
+    };
   },
   methods: {
     _get(url) {
       return fetch(url).then((d) => d.json());
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">

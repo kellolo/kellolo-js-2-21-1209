@@ -19,12 +19,14 @@
 
     <button class="product-box__button">
       Browse All Products
-      <img src="https://raw.githubusercontent.com/Veledar/STATIK/master/imgs/arrowToRight.png"
-            alt="Стрелка"/>
+      <img
+        src="https://raw.githubusercontent.com/Veledar/STATIK/master/imgs/arrowToRight.png"
+        alt="Стрелка"
+      />
     </button>
 
     <Offer />
-    </div>
+  </div>
 </template>
 
 <script>
@@ -32,19 +34,8 @@ import Catalog from "../components/Catalog.vue";
 import OfferBox from "../components/OfferBox.vue";
 import Offer from "../components/Offer.vue";
 
-
 export default {
-  components: { Catalog, OfferBox, Offer },
-    data() {
-    return {
-      showBasket: false,
-    }
-  },
-  methods: {
-    _get(url) {
-      return fetch(url).then((d) => d.json());
-    }
-  }
+  components: { Catalog, OfferBox, Offer }
 }
 </script>
 
