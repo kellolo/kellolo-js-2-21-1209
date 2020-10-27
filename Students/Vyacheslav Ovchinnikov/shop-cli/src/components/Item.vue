@@ -47,3 +47,7 @@ export default {
     props: ['item', 'type']
 }
 </script>
+
+<style>
+
+</style>
