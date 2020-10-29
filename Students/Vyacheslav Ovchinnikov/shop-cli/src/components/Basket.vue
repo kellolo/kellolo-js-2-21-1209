@@ -9,7 +9,7 @@
     />
     <div class="headerCartWrapTotalPrice">
       <div>total</div>
-      <div>$500.00</div>
+      <div>$ {{ total }}</div>
     </div>
     <button type="button" class="button productsButtonIndex">Checkout</button>
     <button type="button" class="button productsButtonIndex">Go to cart</button>
@@ -25,8 +25,9 @@ export default {
   data() {
     return {
       items: [],
-      url: "/api/basket",
-    };
+      total: null,
+      url: "/api/basket"
+    }
   },
   methods: {
     add(item) {
@@ -71,6 +72,7 @@ export default {
   mounted() {
     get(this.url).then((basket) => {
       this.items = basket.content;
+      this.total = basket.totalPrice;
     });
   },
 };
