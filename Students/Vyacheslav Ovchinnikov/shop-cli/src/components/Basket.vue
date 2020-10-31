@@ -9,7 +9,7 @@
     />
     <div class="headerCartWrapTotalPrice">
       <div>total</div>
-      <div>$500.00</div>
+      <div>$ {{ total }}</div>
     </div>
     <button type="button" class="button productsButtonIndex">Checkout</button>
     <button type="button" class="button productsButtonIndex">Go to cart</button>
@@ -25,8 +25,9 @@ export default {
   data() {
     return {
       items: [],
-      url: "/api/basket",
-    };
+      total: null,
+      url: "/api/basket"
+    }
   },
   methods: {
     add(item) {
@@ -52,14 +53,14 @@ export default {
     remove(id) {
       let find = this.items.find((el) => el.productId == id);
       if (find.amount > 1) {
-        put(`/api/basket/${find.productId}`, { amount: -1 }).then(status => {
+        put(`/api/basket/${find.productId}`, { amount: -1 }).then((status) => {
           /*{ status: true }*/
           if (status.status) {
             find.amount--;
           }
         });
       } else {
-        del(`/api/basket/${find.productId}`).then(status => {
+        del(`/api/basket/${find.productId}`).then((status) => {
           /*{ status: true }*/
           if (status.status) {
             this.items.splice(this.items.indexOf(find), 1);
@@ -69,7 +70,10 @@ export default {
     },
   },
   mounted() {
-    get(this.url).then(basket => { this.items = basket.content });
+    get(this.url).then((basket) => {
+      this.items = basket.content;
+      this.total = basket.totalPrice;
+    });
   },
 };
 </script>

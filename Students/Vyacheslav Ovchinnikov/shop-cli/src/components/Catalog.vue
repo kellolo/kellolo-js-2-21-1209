@@ -11,7 +11,7 @@
 
 <script>
 import Item from "./Item.vue";
-import { get } from '../libraries/requests'
+import { get } from "../libraries/requests.js";
 
 export default {
   components: { Item },
